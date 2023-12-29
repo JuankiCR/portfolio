@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+  --bg-color: #080807;
+  --bg-cards: #1b2123;
+  --blob-color-1: #fed43f;
+  --blob-color-2: #920cf8;
+
+  --txt-light-primary: #fefefe;
+  --txt-light-secundary: #8c8992;
+
+  --jphonix-color: #fb652c;
+  --farmaenvios-color: #1747bf;
+  --dclariss-color: #f6a189;
+  --github-color: #fefefe;
+  --linkedin-color: #0a66c2;
+  --hackerranck-color: #32c766;
+  --cecytem-color: #00866b;
+  --ucol-color: #837e2f;
+
+  --skill-emphasis: #211509;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--txt-light-primary);
+  height: 100%;
+  padding: 1rem 1rem 0px 1rem;
+  width: 100%;
+}
+
+/* ############################## Layout ############################## */
+#mainWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  height: 100%;
+  margin: auto;
+  max-width: 1200px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+#topSection,
+#midSection,
+#bottomSection {
+  display: flex;
+  flex: 1;
+  flex-basis: calc(100% / 3);
+  gap: .8rem;
+  min-height: 200px;
+  transition: flex-basis .3s ease;
+}
+
+#bottomSection {
+  margin-bottom: 1rem;
+}
+
+#dev_area {
+  aspect-ratio: 1;
+}
+
+.flex-fill {
+  flex: 1;
+}
+
+.grid_area {
+  transition: scale .2s ease-in-out;
+  background-color: var(--bg-cards);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.article_title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* ############################## Dev ############################## */
+#dev_title {
+  margin: .2rem;
+}
+
+#dev_area {
+  overflow: hidden;
+}
+
+#dev_area .dev_picture {
+  transition: opacity .3s ease, height .3s ease;
+  background-image: url(./public/media/me/juanki.gif);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  opacity: 1;
+  height: 240px;
+  width: 240px;
+}
+
+#dev_area:hover .dev_picture {
+  opacity: 0;
+  height: 0px;
+}
+
+#dev_area .dev_who_im {
+  transition: opacity .3s ease,
+    height .3s ease;
+  height: 0px;
+  opacity: 0;
+  overflow: hidden;
+}
+
+#dev_area .dev_who_im {
+  height: 80%;
+  opacity: 1;
+}
+
+.dev_who_im {
+  padding-top: 1rem;
+}
+
+.dev_who_im_title {
+  font-size: 1.2rem;
+  margin-bottom: .5rem;
+}
+
+.dev_who_im_text {
+  color: var(--txt-light-secundary);
+  margin-bottom: 1.5rem;
+}
+
+#socialWrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.social_item {
+  transition: background-color .3s ease;
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+  background-color: var(--txt-light-secundary);
+}
+
+#socialWrapper #socialGithub {
+  mask: url(./public/media/social/github.svg) center/contain no-repeat;
+}
+
+#socialWrapper #socialLinkedin {
+  mask: url(./public/media/social/linkedin.svg) center/contain no-repeat;
+}
+
+#socialWrapper #socialHackerrank {
+  mask: url(./public/media/social/hackerrank.svg) center/contain no-repeat;
+}
+
+#socialGithub:hover {
+  background-color: var(--github-color);
+}
+
+#socialLinkedin:hover {
+  background-color: var(--linkedin-color);
+}
+
+#socialHackerrank:hover {
+  background-color: var(--hackerranck-color);
+}
+
+/* ############################## Academic History ############################## */
+#education_area {
+  overflow-y: auto;
+}
+
+.school_ico {
+  transition: background-color .3s ease;
+  background-color: var(--txt-light-secundary);
+  height: 48px;
+  min-width: 30%;
+}
+
+#schoolWrapper #UniversidadColima .school_ico {
+  mask: url(./public/media/school/udc.png) center/contain no-repeat;
+}
+
+#schoolWrapper #CECyTEM .school_ico {
+  mask: url(./public/media/school/cecytem.png) center/contain no-repeat;
+}
+
+#UniversidadColima:hover .school_ico {
+  background-color: var(--ucol-color);
+}
+
+#CECyTEM:hover .school_ico {
+  background-color: var(--cecytem-color);
+}
+
+.school_item {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.school_name {
+  margin-bottom: .5rem;
+}
+
+.school_period,
+.school_title {
+  color: var(--txt-light-secundary);
+}
+
+/* ############################## Jobs ############################## */
+#jobsWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: .8rem;
+  height: 100%;
+  width: 100%;
+}
+
+.job_card {
+  flex: 1;
+  cursor: pointer;
+}
+
+.job_header {
+  display: flex;
+  flex-direction: row;
+  gap: .8rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.job_position {
+  color: var(--txt-light-secundary);
+  font-size: .8rem;
+  font-weight: 600;
+  padding: 4px;
+  text-align: center;
+}
+
+.job_ico {
+  transition: background-color .3s ease;
+  background-color: var(--txt-light-secundary);
+  height: 32px;
+  width: 32px;
+}
+
+.job_title {
+  transition: color .3s ease;
+  color: var(--txt-light-secundary);
+}
+
+.job_card:hover .job_title {
+  color: var(--txt-light-primary);
+}
+
+#jPhonix .job_ico {
+  mask: url(./public/media/jobs/jphonix.svg) center/contain no-repeat;
+}
+
+#jPhonix:hover .job_ico {
+  background-color: var(--jphonix-color);
+}
+
+#FarmaEnvios .job_ico {
+  mask: url(./public/media/jobs/farmaenvios.svg) center/contain no-repeat;
+}
+
+#FarmaEnvios:hover .job_ico {
+  background-color: var(--farmaenvios-color);
+}
+
+#DClariss .job_ico {
+  mask: url(./public/media/jobs/dclariss.svg) center/contain no-repeat;
+  width: 128px;
+}
+
+#DClariss:hover .job_ico {
+  background-color: var(--dclariss-color);
+}
+
+.job_highlights {
+  text-align: center;
+}
+
+.job_highlights ul {
+  list-style: none;
+}
+
+.job_highlights li {
+  margin-top: .5rem;
+}
+
+#jPhonix .visit_label {
+  background-color: var(--jphonix-color);
+}
+
+#FarmaEnvios .visit_label {
+  background-color: var(--farmaenvios-color);
+}
+
+#DClariss .visit_label {
+  background-color: var(--dclariss-color);
+  color: var(--bg-color);
+}
+
+.visit_label {
+  position: fixed;
+  display: none;
+  color: var(--txt-light-primary);
+  padding: 5px;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+
+
+.job_card:hover .visit_label {
+  display: block;
+}
+
+/* ############################## Skills ############################## */
+/* Skill Colors */
+.AWS {
+  --skill-emphasis: #ec912d;
+  mask: url(./public/media/technologies/aws.svg) center center / contain no-repeat;
+}
+
+.CSS {
+  --skill-emphasis: #254bdd;
+  mask: url(./public/media/technologies/css3.svg) center center / contain no-repeat;
+}
+
+.GIT {
+  --skill-emphasis: #e84e31;
+  mask: url(./public/media/technologies/git.svg) center center / contain no-repeat;
+}
+
+.HTML {
+  --skill-emphasis: #e5532d;
+  mask: url(./public/media/technologies/html5.svg) center center / contain no-repeat;
+}
+
+.JAVASCRIPT {
+  --skill-emphasis: #f7e025;
+  mask: url(./public/media/technologies/js.svg) center center / contain no-repeat;
+}
+
+.NGINX {
+  --skill-emphasis: #0a9840;
+  mask: url(./public/media/technologies/nginx.svg) center center / contain no-repeat;
+}
+
+.NODEJS {
+  --skill-emphasis: #026e00;
+  mask: url(./public/media/technologies/nodejs.svg) center center / contain no-repeat;
+}
+
+.PHP {
+  --skill-emphasis: #4d588e;
+  mask: url(./public/media/technologies/php.svg) center center / contain no-repeat;
+}
+
+#expositorWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  height: calc(100% - 1.5rem - 16px);
+  justify-content: center;
+}
+
+.skill_card {
+  background-color: var(--skill-emphasis);
+  width: 128px;
+}
+
+/* Madiaquery 800px */
+
+@media (max-width: 800px) {
+  html {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+
+  #mainWrapper {
+    height: auto;
+  }
+
+  #topSection,
+  #midSection {
+    flex-direction: column;
+    flex-basis: auto;
+  }
+
+  article {
+    min-height: 295px;
+  }
+
+  #dev_area {
+    height: 295px;
+    width: 295px;
+    margin: auto;
+  }
+
+  #expositorWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+    height: calc(295px - 1.5rem - 16px);
+    justify-content: center;
+  }
+
+}
+
+/* ############################## scrollbar ############################## */
+/* Estilo del scrollbar para WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bg-cards);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-color);
+}
+
+/* Estilo del scrollbar para Internet Explorer y Edge */
+*::-ms-scrollbar {
+  width: 6px;
+}
+
+*::-ms-scrollbar-thumb {
+  background-color: var(--bg-cards);
+}
+
+*::-ms-scrollbar-track {
+  background-color: var(--bg-color);
+}

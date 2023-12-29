@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JuankiCR | Portfolio</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <main id="mainWrapper">
+    <section id="topSection">
+      <article id="dev_area" class="grid_area">
+        <h1 id="dev_title" class="article_title">I'm Juan Ceballos!</h1>
+        <div class="job_position">Web Developer</div>
+        <div class="dev_picture"></div>
+        <div class="dev_who_im">
+          <h2 class="dev_who_im_title">Who I'm?</h2>
+          <p class="dev_who_im_text">
+            With over two years of hands-on experience in dynamic work environments, I've been dedicated to the ongoing
+            pursuit of excellence in crafting optimal web solutions.
+          </p>
+          <div id="socialWrapper">
+            <div id="socialGithub" class="social_item" onclick="goto('https://github.com/JuankiCR')"></div>
+            <div id="socialLinkedin" class="social_item"
+              onclick="goto('https://www.linkedin.com/in/juan-carlos-ceballos-264538224/')"></div>
+            <div id="socialHackerrank" class="social_item"
+              onclick="goto('https://www.hackerrank.com/profile/JuankiCR')"></div>
+          </div>
+        </div>
+      </article>
+      <article id="experience_area" class="grid_area flex-fill">
+        <h3 class="article_title">Experience</h3>
+        <div id="jobsWrapper">
+          <div id="jPhonix" class="job_card" onclick="goto('https://www.agmjuridicosphonix.com/')">
+            <!-- Etiqueta que sigue el cursor -->
+            <div class="visit_label">Visit</div>
+            <div class="job_header">
+              <div class="job_ico"></div>
+              <div class="job_title">jPhonix</div>
+            </div>
+            <div class="job_position">Jr
+              Web Developer
+              <div class="job_time">July 2023 - Now</div>
+            </div>
+            <div class="job_highlights">
+              <ul>
+                <li class="highlight_item">Frontend development</li>
+                <li class="highlight_item">Search algorithms</li>
+                <li class="highlight_item">General support</li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="DClariss" class="job_card" onclick="goto('https://dclariss.com/')">
+            <!-- Etiqueta que sigue el cursor -->
+            <div class="visit_label">Visit</div>
+            <div class="job_header">
+              <div class="job_ico"></div>
+            </div>
+            <div class="job_position">
+              Main Developer
+              <div class="job_time">In development</div>
+            </div>
+            <div class="job_highlights">
+              <ul>
+                <li class="highlight_item">Project management</li>
+                <li class="highlight_item">Full-stack developer</li>
+                <li class="highlight_item">Negotiation</li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="FarmaEnvios" class="job_card" onclick="goto('https://farmaenvios.com/')">
+            <!-- Etiqueta que sigue el cursor -->
+            <div class="visit_label">Visit</div>
+            <div class="job_header">
+              <div class="job_ico"></div>
+              <div class="job_title">FarmaEnvios</div>
+            </div>
+            <div class="job_position">Jr
+              Web Developer
+              <div class="job_time">1 year</div>
+            </div>
+            <div class="job_highlights">
+              <ul>
+                <li class="highlight_item">Backend development</li>
+                <li class="highlight_item">Reporting platform</li>
+                <li class="highlight_item">SQL queries</li>
+              </ul>
+            </div>
+          </div>
+      </article>
+    </section>
+    <section id="midSection">
+      <article id="skills_area" class="grid_area flex-fill">
+        <h3 class="article_title">Skills</h3>
+        <div id="expositorWrapper">
+        </div>
+      </article>
+      <article id="education_area" class="grid_area flex-fill">
+        <h3 class="article_title">Academic History</h3>
+        <div id="schoolWrapper">
+          <div id="UniversidadColima" class="school_item">
+            <div class="school_ico"></div>
+            <div class="school_group">
+              <div class="school_name">Universidad de Colima | FIME |<span class="school_period"> 2020 - Now </span>
+              </div>
+              <div class="school_title">Intelligent Computing Engineer</div>
+            </div>
+          </div>
+          <div id="CECyTEM" class="school_item">
+            <div class="school_ico"></div>
+            <div class="school_group">
+              <div class="school_name">CECyTEM | Tultepec |<span class="school_period"> 2015 - 2018 </span></div>
+              <div class="school_title">Programming technician</div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section id="bottomSection">
+      <article id="projects_area" class="grid_area flex-fill">
+        <div class="card_title">
+          <h3 class="article_title">Projects</h3>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script src="./script.js"></script>
+  <script>
+    // Window onload
+    window.onload = () => {
+      loadSkills();
+    }
+  </script>
+</body>
+
+</html>
