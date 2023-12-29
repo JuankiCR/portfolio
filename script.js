@@ -46,19 +46,19 @@ const loadSkills = () => {
 }
 
 document.getElementById('jPhonix').addEventListener('mousemove', function (e) {
-  var visitLabel = document.querySelector('#jPhonix .visit_label');
+  var visitLabel = document.querySelector('#jPhonix .job_header .visit_label');
   visitLabel.style.left = (e.pageX + 16) + 'px';
   visitLabel.style.top = e.pageY + 'px';
 });
 
 document.getElementById('DClariss').addEventListener('mousemove', function (e) {
-  var visitLabel = document.querySelector('#DClariss .visit_label');
+  var visitLabel = document.querySelector('#DClariss .job_header .visit_label');
   visitLabel.style.left = (e.pageX + 16) + 'px';
   visitLabel.style.top = e.pageY + 'px';
 });
 
 document.getElementById('FarmaEnvios').addEventListener('mousemove', function (e) {
-  var visitLabel = document.querySelector('#FarmaEnvios .visit_label');
+  var visitLabel = document.querySelector('#FarmaEnvios .job_header .visit_label');
   visitLabel.style.left = (e.pageX + 16) + 'px';
   visitLabel.style.top = e.pageY + 'px';
 });

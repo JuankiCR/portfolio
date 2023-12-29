@@ -237,7 +237,6 @@ body {
 
 .job_card {
   flex: 1;
-  cursor: pointer;
 }
 
 .job_header {
@@ -331,9 +330,11 @@ body {
   pointer-events: none;
 }
 
+.job_header {
+  cursor: pointer;
+}
 
-
-.job_card:hover .visit_label {
+.job_header:hover .visit_label {
   display: block;
 }
 
