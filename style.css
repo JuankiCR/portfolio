@@ -401,6 +401,10 @@ body {
   gap: 1rem;
 }
 
+#projects_area {
+  width: 100%;
+}
+
 .project_card {
   position: relative;
   aspect-ratio: 16/9;
@@ -482,10 +486,6 @@ body {
     height: 295px;
     width: 295px;
     margin: auto;
-  }
-
-  #projects_area {
-    max-width: 100%;
   }
 
   #expositorWrapper {
