@@ -393,8 +393,66 @@ body {
   width: 128px;
 }
 
-/* Madiaquery 800px */
+/* ############################## Projects ############################## */
+#projectsWrapper {
+  display: flex;
+  height: calc(100% - 1.5rem - 16px);
+  justify-content: center;
+  gap: 1rem;
+}
 
+.project_card {
+  position: relative;
+  aspect-ratio: 16/9;
+  background-color: #696969;
+  border-radius: 16px;
+  height: 100%;
+  overflow: hidden;
+  width: auto;
+}
+
+.project_card .project_image {
+  height: 100%;
+  filter: brightness(75%);
+  width: auto;
+}
+
+.project_card .project_info {
+  transition: bottom .3s ease;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  background: linear-gradient(transparent, var(--bg-cards));
+  bottom: -100%;
+  color: var(--txt-light-primary);
+  display: flex;
+  flex-direction: column;
+  height: 101%;
+  justify-content: space-between;
+  position: absolute;
+  padding: 1rem;
+  width: 100%;
+}
+
+.project_card:hover .project_info {
+  bottom: -1px;
+}
+
+.project_name {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.project_link {
+  color: var(--txt-light-primary);
+  cursor: pointer;
+  text-align: center;
+}
+
+.project_link:hover {
+  text-decoration: underline;
+}
+
+/* ############################## Madiaquery 800px ############################## */
 @media (max-width: 800px) {
   html {
     overflow-y: auto;
@@ -411,6 +469,11 @@ body {
     flex-basis: auto;
   }
 
+  #bottomSection {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
   article {
     min-height: 295px;
   }
@@ -421,6 +484,10 @@ body {
     margin: auto;
   }
 
+  #projects_area {
+    max-width: 100%;
+  }
+
   #expositorWrapper {
     display: flex;
     flex-wrap: wrap;
@@ -429,6 +496,9 @@ body {
     justify-content: center;
   }
 
+  #projectsWrapper {
+    height: calc(295px - 1.5rem - 16px);
+  }
 }
 
 /* ############################## scrollbar ############################## */

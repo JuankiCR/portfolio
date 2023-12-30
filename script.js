@@ -25,6 +25,8 @@ const skillList = [
   },
 ];
 
+const api = 'https://api.juankicr.dev/';
+
 const goto = (url) => {
   window.open(url, '_blank');
 };
@@ -43,6 +45,54 @@ const loadSkills = () => {
 
     expositorWrapper.appendChild(skillItem);
   });
+}
+
+const loadProjects = () => {
+  const projectsWrapper = document.getElementById('projectsWrapper');
+
+  fetch(api + 'projects/list')
+    .then(response => response.json())
+    .then(projects => {
+      projects.forEach(project => {
+        const projectID = project.name.replace(/\s/g, '');
+        const projectItem = document.createElement('div');
+        projectItem.classList.add('project_card');
+        projectItem.setAttribute('id', projectID);
+
+        const projectImage = document.createElement('img');
+        projectImage.classList.add('project_image');
+        projectImage.src = `${api}media/image/${project.picture}`;
+
+        const projectInfo = document.createElement('div');
+        projectInfo.classList.add('project_info');
+
+        const infoWrapper = document.createElement('div');
+
+        const projectName = document.createElement('h3');
+        projectName.classList.add('project_name');
+        projectName.innerHTML = project.name;
+
+        const projectDescription = document.createElement('div');
+        projectDescription.classList.add('project_description');
+        projectDescription.innerHTML = project.description;
+
+        const projectLink = document.createElement('div');
+        projectLink.classList.add('project_link');
+        projectLink.setAttribute('onclick', `goto('${project.link}')`);
+        projectLink.innerHTML = 'See project';
+
+        infoWrapper.appendChild(projectName);
+        infoWrapper.appendChild(projectDescription);
+        projectInfo.appendChild(infoWrapper);
+        projectInfo.appendChild(projectLink);
+
+        projectItem.appendChild(projectImage);
+        projectItem.appendChild(projectInfo);
+
+        projectsWrapper.appendChild(projectItem);
+      });
+    })
+    .catch(error => console.log(error));
 }
 
 document.getElementById('jPhonix').addEventListener('mousemove', function (e) {
