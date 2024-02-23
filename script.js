@@ -9,9 +9,9 @@ const getProjects = () => {
   fetch('https://api.juankicr.dev/projects/list')
   .then((response) => response.json())
   .then((data) => {
-    data.forEach((project) => {
+    data.forEach((project, count) => {
       projectCards += `
-        <section id="_PID${project._id}" class="resumeCard ${project._id%2 == 1 ? "alt" : ""} projectCard"> 
+        <section id="_PID${project._id}" class="resumeCard ${count % 2 == 0 ? "alt" : ""} projectCard"> 
           <div class="projectImageWrapper">
             <img src="https://api.juankicr.dev/media/image/${project.picture}" alt="Screenshot for project: ${project.name}" loading="lazy">
           </div>
