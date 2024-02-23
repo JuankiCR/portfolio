@@ -3,33 +3,28 @@ const goto = (url) => {
 };
 
 const getProjects = () => {
-  projectExhibitor = document.getElementById('projectExhibitor');
-  projectExhibitor.innerHTML = '';
+  projectsTitle = document.getElementById('projectsTitle');
   let projectCards = '';
-
-  // /* gradiente con trasparencia */
-  // background: -webkit-linear-gradient(315deg, var(--project-color-0), var(--project-color-100));
-  // background: linear-gradient(315deg, var(--project-color-0), var(--project-color-100
 
   fetch('https://api.juankicr.dev/projects/list')
   .then((response) => response.json())
   .then((data) => {
     data.forEach((project) => {
-      let imageStyle = `
-        background: -webkit-linear-gradient(315deg, var(--project-color-0), var(--project-color-100)), url('https://api.juankicr.dev/media/image/${project.picture}') no-repeat center center / cover;
-        background: linear-gradient(315deg, var(--project-color-0), var(--project-color-100)), url('https://api.juankicr.dev/media/image/${project.picture}') no-repeat center center / cover;
-      `;
-
-      console.log(project);
       projectCards += `
-        <div class="projectItem" style = "${imageStyle}">
-          <div class="projectTitle"> ${project.name} </div>
-          <div class="projectDescription"> ${project.description} </div>
-          <button class="primaryButton" onclick="goto('${project.link}')">visit</button>
-        </div>
+        <section id="_PID${project._id}" class="resumeCard ${project._id%2 == 1 ? "alt" : ""} projectCard"> 
+          <div class="projectImageWrapper">
+            <img src="https://api.juankicr.dev/media/image/${project.picture}" alt="Screenshot for project: ${project.name}" loading="lazy">
+          </div>
+          <div class="projectInfoWrapper">
+            <div class="projectName">${project.name}</div>
+            <div class="projectDescription">${project.description}</div>
+            <button class="primaryButton" onclick="goto('${project.link}')">See project</button>
+          </div>
+        </section> 
       `;
     });
-    projectExhibitor.innerHTML = projectCards;
+
+    projectsTitle.insertAdjacentHTML('afterend', projectCards);
   });
 };
 
