@@ -284,6 +284,69 @@ section.resumeCard{
   width: 100%;
 }
 
+/* #################### Skills #################### */
+.skillCard{
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+  width: calc(50% - (1rem * 2 / 3));
+}
+
+.skillTitle {
+  font-size: 2rem;
+  background: -webkit-linear-gradient(315deg, var(--primary), var(--accent));
+  background: linear-gradient(315deg, var(--primary), var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+  font-weight: 700;
+}
+
+.skillItemWrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skillItemWrapper .skillItem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: .5rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: transparent;
+  transition: background-color ease .3s,
+              color ease .3s;
+}
+
+.skillItemWrapper .skillItem:hover{
+  background-color: var(--icon-shadow);
+  color: var(--primary-btn-txt-hover);
+}
+
+.skillItemWrapper .skillIcon{
+  height: 80px;
+  width: 80px;
+
+}
+
+.skillIcon img{
+  height: 100%;
+  width: 100%;
+}
+
+img.need-contrast{
+  filter: drop-shadow(0 0 5px var(--icon-shadow));
+}
+
+
 /* #################### Responsive #################### */
 @media screen and (max-width: 768px){
   .profileImage{
@@ -314,6 +377,9 @@ section.resumeCard{
   .projectCard .projectName{
     align-self: center;
   }
+  .skillCard{
+    width: 100%;
+  }
 }
 
 /* #################### Theme #################### */
@@ -331,6 +397,8 @@ section.resumeCard{
     --project-color-0: #e6ecec9e;
     --project-color-100: #bde0e9ba;
     --project-text-detail: #655f91;
+    --icon-shadow: #19161066;
+    --constras-skill: #191610;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -347,10 +415,12 @@ section.resumeCard{
     --project-color-0: #07060499;
     --project-color-100: #131919cf;
     --project-text-detail: #746ea1;
+    --icon-shadow: #eeebe566;
+    --constras-skill: #eeebe5;
   }
 }
 
-/* #################### Titulos #################### */
+/* #################### Titles #################### */
 .sectionTitle{
   font-size: 1.4rem;
   width: 100%;
@@ -358,6 +428,7 @@ section.resumeCard{
   -webkit-text-stroke: var(--primary) 1px;
   color: transparent;
   letter-spacing: .5rem;
+  margin-top: 2rem;
 }
 
 /* #################### Buttons #################### */
@@ -380,7 +451,24 @@ section.resumeCard{
   cursor: pointer;
 }
 
-/* #################### scrollbar #################### */
+.secundaryButton{
+  padding: .5rem 2rem;
+  border-radius: 8px;
+  background-color: transparent;
+  border: solid 2px var(--secondary);
+  color: var(--border-color);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: border-color ease .3s;
+  outline: none;
+}
+
+.secundaryButton:hover{
+  border: solid 2px var(--accent);
+  cursor: pointer;
+}
+
+/* #################### Scrollbar #################### */
 ::-webkit-scrollbar {
   width: 4px;
 }
@@ -398,7 +486,7 @@ section.resumeCard{
   background: var(--secondary);
 }
 
-/* scroll mozilla */
+/* Scroll mozilla */
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--alt-bg-cards) transparent;

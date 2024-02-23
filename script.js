@@ -18,7 +18,7 @@ const getProjects = () => {
           <div class="projectInfoWrapper">
             <div class="projectName">${project.name}</div>
             <div class="projectDescription">${project.description}</div>
-            <button class="primaryButton" onclick="goto('${project.link}')">See project</button>
+            <button class="secundaryButton" onclick="goto('${project.link}')">See project</button>
           </div>
         </section> 
       `;
