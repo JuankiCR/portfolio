@@ -310,6 +310,7 @@ section.resumeCard{
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+  overflow-y: scroll;
 }
 
 .skillItemWrapper .skillItem{
@@ -371,8 +372,8 @@ img.need-contrast{
     flex-direction: row;
     justify-content: space-around;
   }
-  .projectCard .projectImageWrapper{
-    display: none;
+  .projectCard .projectInfoWrapper{
+    width: 80%px;
   }
   .projectCard .projectName{
     align-self: center;
