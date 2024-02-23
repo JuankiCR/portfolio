@@ -24,134 +24,225 @@
 
 <body>
   <main id="mainWrapper">
-    <section id="topSection">
-      <article id="dev_area" class="grid_area">
-        <h1 id="dev_title" class="article_title">I'm Juan Ceballos!</h1>
-        <div class="job_position">Web Developer</div>
-        <div class="dev_picture"></div>
-        <div class="dev_who_im">
-          <h2 class="dev_who_im_title">Who I'm?</h2>
-          <p class="dev_who_im_text">
-            With over two years of hands-on experience in dynamic work environments, I've been dedicated to the ongoing
-            pursuit of excellence in crafting optimal web solutions.
-          </p>
-          <div id="socialWrapper">
-            <div id="socialGithub" class="social_item" onclick="goto('https://github.com/JuankiCR')"></div>
-            <div id="socialLinkedin" class="social_item"
-              onclick="goto('https://www.linkedin.com/in/juan-carlos-ceballos-264538224/')"></div>
-            <div id="socialHackerrank" class="social_item"
-              onclick="goto('https://www.hackerrank.com/profile/JuankiCR')"></div>
-          </div>
+    <section id="presentation" class="resumeCard">
+      <div class="profileImage"></div>
+      <div class="devInfo">
+        <div class="devTitle">
+          <h1 class="profileName">Juan Carlos Ceballos</h1>
+          <p class="profileTitle">Web Developer | JuankiCR</p>
         </div>
-      </article>
-      <article id="experience_area" class="grid_area flex-fill">
-        <h3 class="article_title">Experience.</h3>
-        <div id="jobsWrapper">
-          <div id="jPhonix" class="job_card">
-            <div class="job_header" onclick="goto('https://www.agmjuridicosphonix.com/')">
-              <div class="job_ico"></div>
-              <div class="job_title">jPhonix</div>
-              <!-- Etiqueta que sigue el cursor -->
-              <div class="visit_label">Visit</div>
-            </div>
-            <div class="job_position">Jr
-              Web Developer
-              <div class="job_time">July 2023 - Now</div>
-            </div>
-            <div class="job_highlights">
-              <ul>
-                <li class="highlight_item">Frontend development</li>
-                <li class="highlight_item">Search algorithms</li>
-                <li class="highlight_item">General support</li>
-              </ul>
-            </div>
-          </div>
+        <div class="devPresentation">
+          <p class="profileDescription">With over two years of hands-on experience in dynamic work environments, I've been dedicated to the ongoing pursuit of excellence in crafting optimal web solutions.</p>
+        </div>
+        <div class="profileSocial">
+          <div id="socialGithub" class="socialLink" onclick="goto('https://github.com/JuankiCR')"></div>
+          <div id="socialLinkedin" class="socialLink" onclick="goto('https://www.linkedin.com/in/juan-carlos-ceballos-264538224/')"></div>
+          <div id="socialHackerRank" class="socialLink" onclick="goto('https://www.hackerrank.com/profile/JuankiCR')"></div>
+        </div>
+      </div>
+    </section>
+    
+    <div class="sectionTitle"> <h2>Work Experience.</h2> </div>
 
-          <div id="DClariss" class="job_card">
-            <div class="job_header" onclick="goto('https://dclariss.com/')">
-              <div class="job_ico"></div>
-              <!-- Etiqueta que sigue el cursor -->
-              <div class="visit_label">Visit</div>
-            </div>
-            <div class="job_position">
-              Main Developer
-              <div class="job_time">In development</div>
-            </div>
-            <div class="job_highlights">
-              <ul>
-                <li class="highlight_item">Project management</li>
-                <li class="highlight_item">Full-stack developer</li>
-                <li class="highlight_item">Negotiation</li>
-              </ul>
-            </div>
-          </div>
+    <section id="xpJPhonix" class="resumeCard jobCard">
+      <div class="jobHeader">
+        <div class="jobLogo"></div>
+        <h3 class="jobTitle">JPhonix</h3>
+        <p class="jobDate">Jr Developer <br> 2022 - Present</p>
+      </div>
+      <div class="jobDesc">
+        <div class="jobResponsibilities">
+          <p>Frontend development</p>
+          <p>Search algorithms</p>
+          <p>General support</p>
+        </div>
+        <button class="primaryButton" onclick="goto('https://www.agmjuridicosphonix.com/')">Go to site</button>
+      </div>
+    </section>
 
-          <div id="FarmaEnvios" class="job_card">
-            <div class="job_header" onclick="goto('https://farmaenvios.com/')">
-              <div class="job_ico"></div>
-              <div class="job_title">FarmaEnvios</div>
-              <!-- Etiqueta que sigue el cursor -->
-              <div class="visit_label">Visit</div>
-            </div>
-            <div class="job_position">Jr
-              Web Developer
-              <div class="job_time">1 year</div>
-            </div>
-            <div class="job_highlights">
-              <ul>
-                <li class="highlight_item">Backend development</li>
-                <li class="highlight_item">Reporting platform</li>
-                <li class="highlight_item">SQL queries</li>
-              </ul>
-            </div>
-          </div>
-      </article>
+    <section id="xpDClariss" class="resumeCard alt jobCard">
+      <div class="jobHeader">
+        <div class="jobLogo"></div>
+        <h3 class="jobTitle">D'Clariss</h3>
+        <p class="jobDate">Main Developer <br> In development</p>
+      </div>
+      <div class="jobDesc">
+        <div class="jobResponsibilities">
+          <p>Project management</p>
+          <p>Full-stack developer</p>
+          <p>Negotiation</p>
+        </div>
+        <button class="primaryButton" onclick="goto('https://dclariss.com/home')">Go to site</button>
+      </div>
     </section>
-    <section id="midSection">
-      <article id="skills_area" class="grid_area flex-fill">
-        <h3 class="article_title">Skills.</h3>
-        <div id="expositorWrapper">
+
+    <section id="xpFarmaEnvios" class="resumeCard jobCard">
+      <div class="jobHeader">
+        <div class="jobLogo"></div>
+        <h3 class="jobTitle">FarmaEnvios</h3>
+        <p class="jobDate">Jr Developer <br> 2020 - 2021</p>
+      </div>
+      <div class="jobDesc">
+        <div class="jobResponsibilities">
+          <p>Backend development</p>
+          <p>Reporting platform</p>
+          <p>SQL queries</p>
         </div>
-      </article>
-      <article id="education_area" class="grid_area flex-fill">
-        <h3 class="article_title">Academic History.</h3>
-        <div id="schoolWrapper">
-          <div id="UniversidadColima" class="school_item">
-            <div class="school_ico"></div>
-            <div class="school_group">
-              <div class="school_name">Universidad de Colima | FIME |<span class="school_period"> 2020 - Now </span>
-              </div>
-              <div class="school_title">Intelligent Computing Engineer</div>
-            </div>
-          </div>
-          <div id="CECyTEM" class="school_item">
-            <div class="school_ico"></div>
-            <div class="school_group">
-              <div class="school_name">CECyTEM | Tultepec |<span class="school_period"> 2015 - 2018 </span></div>
-              <div class="school_title">Programming technician</div>
-            </div>
-          </div>
-        </div>
-      </article>
+        <button class="primaryButton" onclick="goto('https://farmaenvios.com/')">Go to site</button>
+      </div>
     </section>
-    <section id="bottomSection">
-      <article id="projects_area" class="grid_area flex-fill">
-        <div class="card_title">
-          <h3 class="article_title">Projects.</h3>
+
+    <div id="projectsTitle" class="sectionTitle"> <h2>Projects.</h2> </div>
+    
+    <!-- <div class="sectionTitle"> <h2>Academic History.</h2> </div>
+
+    <section id="academicCECyTEM" class="resumeCard academicCard"> CECyTEM | Programming technician </section>
+
+    <section id="academicESIME" class="resumeCard alt academicCard"> IPN - ESIME | Communications and Electronics Engineering </section>
+
+    <section id="academicFIME" class="resumeCard academicCard"> UCOL - FIME | Intelligent Computer Engineering </section> -->
+
+    <div class="sectionTitle"> <h2>Skills.</h2> </div>
+
+    <section id="skills" class="resumeCard skillCard">
+      <h3 class="skillTitle">Frontend</h3>
+      <div class="skillItemWrapper">
+        <div class="skillItem">
+          <div class="skillIcon">
+            <img src="./public/media/skills/html.svg" alt="HTML5">
+          </div>
+          <p>HTML</p>
         </div>
-        <div id="projectsWrapper">
+  
+        <div class="skillItem">
+          <div class="skillIcon">
+            <img src="./public/media/skills/css.svg" alt="CSS">
+          </div>
+          <p>CSS</p>
         </div>
-      </article>
+  
+        <div class="skillItem">
+          <div class="skillIcon">
+            <img src="./public/media/skills/js.svg" alt="JavaScript">
+          </div>
+          <p>JavaScript</p>
+        </div>
+      </div>
     </section>
+
+    <section id="skills" class="resumeCard alt skillCard">
+      <h3 class="skillTitle">Backend</h3>
+      <div class="skillItemWrapper">
+        <div class="skillItem">
+          <div class="skillIcon">
+            <img src="./public/media/skills/nodejs.svg" alt="NodeJS">
+          </div>
+          <p>NodeJS</p>
+        </div>
+  
+        <div class="skillItem">
+          <div class="skillIcon">
+            <img src="./public/media/skills/express.svg" alt="ExpressJS" class="need-contrast">
+          </div>
+          <p>ExpressJS</p>
+        </div>
+  
+        <div class="skillItem">
+          <div class="skillIcon">
+            <img src="./public/media/skills/python.svg" alt="Python">
+          </div>
+          <p>Python</p>
+        </div>
+  
+        <div class="skillItem">
+          <div class="skillIcon">
+            <img src="./public/media/skills/nginx.svg" alt="NGINX">
+          </div>
+          <p>NGINX</p>
+        </div>
+  
+        <div class="skillItem">
+          <div class="skillIcon">
+            <img src="./public/media/skills/postgresql.svg" alt="Postgresql">
+          </div>
+          <p>Postgresql</p>
+        </div>
+  
+        <div class="skillItem">
+          <div class="skillIcon">
+            <img src="./public/media/skills/mongodb.svg" alt="MongoDB">
+          </div>
+          <p>MongoDB</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="resumeCard alt skillCard">
+      <h3 class="skillTitle">Tools</h3>
+      <div class="skillItemWrapper">
+        <div class="skillItem">
+          <div class="skillIcon">
+            <img src="./public/media/skills/git.svg" alt="Git">
+          </div>
+          <p>Git</p>
+        </div>
+  
+        <div class="skillItem">
+          <div class="skillIcon">
+            <img src="./public/media/skills/postman.svg" alt="Postman">
+          </div>
+          <p>Postman</p>
+        </div>
+  
+        <div class="skillItem">
+          <div class="skillIcon">
+            <img src="./public/media/skills/vscode.svg" alt="VSCode">
+          </div>
+          <p>VSCode</p>
+        </div>
+  
+        <div class="skillItem">
+          <div class="skillIcon">
+            <img src="./public/media/skills/notion.svg" alt="Notion" class="need-contrast">
+          </div>
+          <p>Notion</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="resumeCard skillCard">
+      <h3 class="skillTitle">Other languages</h3>
+      <div class="skillItemWrapper">
+        <div class="skillItem">
+          <div class="skillIcon">
+            <img src="./public/media/skills/java.svg" alt="Java">
+          </div>
+          <p>Java</p>
+        </div>
+  
+        <div class="skillItem">
+          <div class="skillIcon">
+            <img src="./public/media/skills/cpp.svg" alt="C++">
+          </div>
+          <p>C++</p>
+        </div>
+  
+        <div class="skillItem">
+          <div class="skillIcon">
+            <img src="./public/media/skills/csharp.svg" alt="C#">
+          </div>
+          <p>C#</p>
+        </div>
+  
+        <div class="skillItem">
+          <div class="skillIcon">
+            <img src="./public/media/skills/kotlin.svg" alt="Kotlin">
+          </div>
+          <p>Kotlin</p>
+        </div>
+      </div>
   </main>
   <script src="./script.js"></script>
-  <script>
-    // Window onload
-    window.onload = () => {
-      loadSkills();
-      loadProjects();
-    }
-  </script>
 </body>
 
 </html>

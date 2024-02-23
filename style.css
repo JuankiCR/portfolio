@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 :root {
-  --bg-color: #080807;
-  --bg-cards: #1b2123;
-  --blob-color-1: #fed43f;
-  --blob-color-2: #920cf8;
+  --page-width: 1200px;
+  --page-padding: 1rem;
 
-  --txt-light-primary: #fefefe;
-  --txt-light-secundary: #8c8992;
+  --social-icon-size: 32px;
 
   --jphonix-color: #fb652c;
   --farmaenvios-color: #1747bf;
@@ -17,8 +14,6 @@
   --hackerranck-color: #32c766;
   --cecytem-color: #00866b;
   --ucol-color: #837e2f;
-
-  --skill-emphasis: #211509;
 }
 
 * {
@@ -32,498 +27,467 @@
   user-select: none;
 }
 
-html {
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw;
-}
-
 body {
-  background-color: var(--bg-color);
-  color: var(--txt-light-primary);
-  height: 100%;
-  padding: 1rem 1rem 0px 1rem;
-  width: 100%;
-}
-
-/* ############################## Layout ############################## */
-#mainWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: .8rem;
-  height: 100%;
-  margin: auto;
-  max-width: 1200px;
-  overflow-y: auto;
-  width: 100%;
-}
-
-#topSection,
-#midSection,
-#bottomSection {
-  display: flex;
-  flex: 1;
-  flex-basis: calc(100% / 3);
-  gap: .8rem;
-  min-height: 200px;
-  transition: flex-basis .3s ease;
-}
-
-#bottomSection {
-  margin-bottom: 1rem;
-}
-
-#dev_area {
-  aspect-ratio: 1;
-}
-
-.flex-fill {
-  flex: 1;
-}
-
-.grid_area {
-  transition: scale .2s ease-in-out;
-  background-color: var(--bg-cards);
-  border-radius: 16px;
-  padding: 16px;
-}
-
-.article_title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-/* ############################## Dev ############################## */
-#dev_title {
-  margin: .2rem;
-}
-
-#dev_area {
-  overflow: hidden;
-}
-
-#dev_area .dev_picture {
-  transition: opacity .3s ease, height .3s ease;
-  background-image: url(./public/media/me/juanki.gif);
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
-  opacity: 1;
-  height: 240px;
-  width: 240px;
-}
-
-#dev_area:hover .dev_picture {
-  opacity: 0;
-  height: 0px;
-}
-
-#dev_area .dev_who_im {
-  transition: opacity .3s ease,
-    height .3s ease;
-  height: 0px;
-  opacity: 0;
-  overflow: hidden;
-}
-
-#dev_area .dev_who_im {
-  height: 80%;
-  opacity: 1;
-}
-
-.dev_who_im {
-  padding-top: 1rem;
-}
-
-.dev_who_im_title {
-  font-size: 1.2rem;
-  margin-bottom: .5rem;
-}
-
-.dev_who_im_text {
-  color: var(--txt-light-secundary);
-  margin-bottom: 1.5rem;
-}
-
-#socialWrapper {
-  display: flex;
-  justify-content: space-around;
-}
-
-.social_item {
-  transition: background-color .3s ease;
-  cursor: pointer;
-  height: 32px;
-  width: 32px;
-  background-color: var(--txt-light-secundary);
-}
-
-#socialWrapper #socialGithub {
-  mask: url(./public/media/social/github.svg) center/contain no-repeat;
-}
-
-#socialWrapper #socialLinkedin {
-  mask: url(./public/media/social/linkedin.svg) center/contain no-repeat;
-}
-
-#socialWrapper #socialHackerrank {
-  mask: url(./public/media/social/hackerrank.svg) center/contain no-repeat;
-}
-
-#socialGithub:hover {
-  background-color: var(--github-color);
-}
-
-#socialLinkedin:hover {
-  background-color: var(--linkedin-color);
-}
-
-#socialHackerrank:hover {
-  background-color: var(--hackerranck-color);
-}
-
-/* ############################## Academic History ############################## */
-#education_area {
-  overflow-y: auto;
-}
-
-.school_ico {
-  transition: background-color .3s ease;
-  background-color: var(--txt-light-secundary);
-  height: 48px;
-  min-width: 30%;
-}
-
-#schoolWrapper #UniversidadColima .school_ico {
-  mask: url(./public/media/school/udc.png) center/contain no-repeat;
-}
-
-#schoolWrapper #CECyTEM .school_ico {
-  mask: url(./public/media/school/cecytem.png) center/contain no-repeat;
-}
-
-#UniversidadColima:hover .school_ico {
-  background-color: var(--ucol-color);
-}
-
-#CECyTEM:hover .school_ico {
-  background-color: var(--cecytem-color);
-}
-
-.school_item {
-  display: flex;
-  margin-bottom: 1rem;
-}
-
-.school_name {
-  margin-bottom: .5rem;
-}
-
-.school_period,
-.school_title {
-  color: var(--txt-light-secundary);
-}
-
-/* ############################## Jobs ############################## */
-#jobsWrapper {
-  display: flex;
-  flex-direction: row;
-  gap: .8rem;
-  height: 100%;
-  width: 100%;
-}
-
-.job_card {
-  flex: 1;
-}
-
-.job_header {
-  display: flex;
-  flex-direction: row;
-  gap: .8rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.job_position {
-  color: var(--txt-light-secundary);
-  font-size: .8rem;
-  font-weight: 600;
-  padding: 4px;
-  text-align: center;
-}
-
-.job_ico {
-  transition: background-color .3s ease;
-  background-color: var(--txt-light-secundary);
-  height: 32px;
-  width: 32px;
-}
-
-.job_title {
-  transition: color .3s ease;
-  color: var(--txt-light-secundary);
-}
-
-.job_card:hover .job_title {
-  color: var(--txt-light-primary);
-}
-
-#jPhonix .job_ico {
-  mask: url(./public/media/jobs/jphonix.svg) center/contain no-repeat;
-}
-
-#jPhonix:hover .job_ico {
-  background-color: var(--jphonix-color);
-}
-
-#FarmaEnvios .job_ico {
-  mask: url(./public/media/jobs/farmaenvios.svg) center/contain no-repeat;
-}
-
-#FarmaEnvios:hover .job_ico {
-  background-color: var(--farmaenvios-color);
-}
-
-#DClariss .job_ico {
-  mask: url(./public/media/jobs/dclariss.svg) center/contain no-repeat;
-  width: 128px;
-}
-
-#DClariss:hover .job_ico {
-  background-color: var(--dclariss-color);
-}
-
-.job_highlights {
-  text-align: center;
-}
-
-.job_highlights ul {
-  list-style: none;
-}
-
-.job_highlights li {
-  margin-top: .5rem;
-}
-
-#jPhonix .visit_label {
-  background-color: var(--jphonix-color);
-}
-
-#FarmaEnvios .visit_label {
-  background-color: var(--farmaenvios-color);
-}
-
-#DClariss .visit_label {
-  background-color: var(--dclariss-color);
-  color: var(--bg-color);
-}
-
-.visit_label {
-  position: fixed;
-  display: none;
-  color: var(--txt-light-primary);
-  padding: 5px;
-  border-radius: 3px;
-  pointer-events: none;
-}
-
-.job_header {
-  cursor: pointer;
-}
-
-.job_header:hover .visit_label {
-  display: block;
-}
-
-/* ############################## Skills ############################## */
-/* Skill Colors */
-.AWS {
-  --skill-emphasis: #ec912d;
-  mask: url(./public/media/technologies/aws.svg) center center / contain no-repeat;
-}
-
-.CSS {
-  --skill-emphasis: #254bdd;
-  mask: url(./public/media/technologies/css3.svg) center center / contain no-repeat;
-}
-
-.GIT {
-  --skill-emphasis: #e84e31;
-  mask: url(./public/media/technologies/git.svg) center center / contain no-repeat;
-}
-
-.HTML {
-  --skill-emphasis: #e5532d;
-  mask: url(./public/media/technologies/html5.svg) center center / contain no-repeat;
-}
-
-.JAVASCRIPT {
-  --skill-emphasis: #f7e025;
-  mask: url(./public/media/technologies/js.svg) center center / contain no-repeat;
-}
-
-.NGINX {
-  --skill-emphasis: #0a9840;
-  mask: url(./public/media/technologies/nginx.svg) center center / contain no-repeat;
-}
-
-.NODEJS {
-  --skill-emphasis: #026e00;
-  mask: url(./public/media/technologies/nodejs.svg) center center / contain no-repeat;
-}
-
-.PHP {
-  --skill-emphasis: #4d588e;
-  mask: url(./public/media/technologies/php.svg) center center / contain no-repeat;
-}
-
-#expositorWrapper {
+  background-color: var(--background);
+  color: var(--text);
+  font-size: 1rem;
+  overflow-x: hidden;
+}
+
+/* #################### Page Wrapper #################### */
+#mainWrapper{
+  max-width: var(--page-width);
+  margin: 1rem auto;
+  padding: var(--page-padding);
   display: flex;
   flex-wrap: wrap;
-  gap: .8rem;
-  height: calc(100% - 1.5rem - 16px);
-  justify-content: center;
-}
-
-.skill_card {
-  background-color: var(--skill-emphasis);
-  width: 128px;
-}
-
-/* ############################## Projects ############################## */
-#projectsWrapper {
-  display: flex;
-  height: calc(100% - 1.5rem - 16px);
-  justify-content: center;
   gap: 1rem;
 }
 
-#projects_area {
-  width: 100%;
-}
-
-.project_card {
-  position: relative;
-  aspect-ratio: 16/9;
-  background-color: #696969;
+/* #################### Page Content #################### */
+section.resumeCard{
+  padding: 1rem;
   border-radius: 16px;
-  height: 100%;
-  overflow: hidden;
-  width: auto;
+  background-color: var(--bg-cards);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  display: flex;
+  gap: clamp(1rem, 5%, 3rem);
 }
 
-.project_card .project_image {
-  height: 100%;
-  filter: brightness(75%);
-  width: auto;
+.resumeCard.alt{
+  background-color: var(--alt-bg-cards);
 }
 
-.project_card .project_info {
-  transition: bottom .3s ease;
-  align-items: center;
-  backdrop-filter: blur(5px);
-  background: linear-gradient(transparent, var(--bg-cards));
-  bottom: -100%;
-  color: var(--txt-light-primary);
+/* #################### Main Info #################### */
+#presentation{
+  height: 300px;
+}
+
+.devInfo{
   display: flex;
   flex-direction: column;
-  height: 101%;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 1rem;
+  flex: 1;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.profileName{  
+  font-size: 2rem;
+  background: -webkit-linear-gradient(315deg, var(--primary), var(--accent));
+  background: linear-gradient(315deg, var(--primary), var(--accent));
+  background-clip: text;  
+  -webkit-background-clip: text;  
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+  background-color: var(--accent);
+  font-weight: 700;
+}
+
+.profileTitle{
+  font-weight: 600;
+  color: var(--text-alt);
+}
+
+.profileDescription{
+  font-size: 1.2rem;
+}
+
+.profileImage{
+  transition: opacity ease .3s,
+              width ease .3s;
+  width: 205px;
+  background: linear-gradient(0deg, var(--bg-cards) 0%, transparent 40%), url('./public/media/me/juanki.gif') no-repeat center center / cover;
+}
+
+/* ******************** Social Info ******************** */
+.profileSocial{
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: flex-end;
   position: absolute;
-  padding: 1rem;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.socialLink{
+  transition: background-color ease .3s;
+  height: var(--social-icon-size);
+  width: var(--social-icon-size);
+  background-color: var(--primary);
+}
+
+#socialGithub.socialLink{  mask: url(./public/media/social/github.svg) center/contain no-repeat; }
+
+#socialLinkedin.socialLink{  mask: url(./public/media/social/linkedin.svg) center/contain no-repeat; }
+
+#socialHackerRank.socialLink{  mask: url(./public/media/social/hackerrank.svg) center/contain no-repeat; }
+
+.socialLink:hover{
+  background-color: var(--accent);
+  cursor: pointer;
+}
+
+/* #################### Experience Info #################### */
+.jobCard{
+  display: flex;
+  gap: 1rem;
+  width: calc(33.333% - (1rem * 2 / 3));
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-color: var(--bg-cards);
+  color: var(--text);
+  font-size: 1rem;
+  min-height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.jobHeader{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jobLogo{
+  transition: background-color ease .3s;
+  background-color: var(--primary);
+  height: 64px;
+  width: 64px;
+}
+
+.jobCard:hover .jobLogo{
+  background-color: var(--job-hover-color);
+}
+
+#xpJPhonix { --job-hover-color: var(--jphonix-color); }
+#xpFarmaEnvios { --job-hover-color: var(--farmaenvios-color); }
+#xpDClariss { --job-hover-color: var(--dclariss-color); }
+
+#xpJPhonix .jobLogo{ mask: url(./public/media/jobs/jphonix.svg) center/contain no-repeat; }
+#xpFarmaEnvios .jobLogo{ mask: url(./public/media/jobs/farmaenvios.svg) center/contain no-repeat; }
+#xpDClariss .jobLogo{
+  mask: url(./public/media/jobs/dclariss.svg) center/contain no-repeat;
+  width: 110px;
+}
+
+.jobTitle{
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.jobDate{
+  font-size: 1rem;
+  color: var(--text-alt);
+}
+
+.jobDesc{
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5%, 1rem);  
+}
+
+/* #################### Projects #################### */
+.projectCard{
+  width: calc(33.333% - (1rem * 2 / 3));
+  color: var(--text);
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projectCard .projectImageWrapper{
+  transition: border ease .3s;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(315deg, transparent, transparent) 1;
+}
+
+.projectCard:hover .projectImageWrapper{
+  border-image: linear-gradient(315deg, var(--primary), var(--accent)) 1;
+}
+
+.projectCard .projectImageWrapper>img{
+  transition: rotate ease .3s,
+              scale ease .3s;
+  height: 100%;
+  aspect-ratio: 16/9;
+}
+
+.projectCard:hover .projectImageWrapper>img{
+  rotate: -10deg;
+  scale: 1.3;
+}
+
+.projectCard .projectInfoWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+
+.projectCard .projectName{
+  width: fit-content;
+  color: var(--text);
+  font-size: 1.3rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.projectCard .projectName::after{
+  transition: left ease .3s;
+  background-color: var(--project-text-detail);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: calc(100% + 8px);
+  height: 50%;
+  opacity: .5;
+  z-index: -1;
+}
+
+.projectCard:hover .projectName::after{
+  left: 4px;
+}
+
+.projectCard .projectDescription{
+  height: 100px;
+  overflow-y: scroll;
+}
+
+.projectCard .projectInfoWrapper button{
+  align-self: center;
+}
+
+/* #################### Academic History #################### */
+.academicCard{
   width: 100%;
 }
 
-.project_card:hover .project_info {
-  bottom: -1px;
+/* #################### Skills #################### */
+.skillCard{
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+  width: calc(50% - (1rem * 2 / 3));
 }
 
-.project_name {
-  margin-bottom: 1rem;
+.skillTitle {
+  font-size: 2rem;
+  background: -webkit-linear-gradient(315deg, var(--primary), var(--accent));
+  background: linear-gradient(315deg, var(--primary), var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+  font-weight: 700;
+}
+
+.skillItemWrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skillItemWrapper .skillItem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: .5rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: transparent;
+  transition: background-color ease .3s,
+              color ease .3s;
+}
+
+.skillItemWrapper .skillItem:hover{
+  background-color: var(--icon-shadow);
+  color: var(--primary-btn-txt-hover);
+}
+
+.skillItemWrapper .skillIcon{
+  height: 80px;
+  width: 80px;
+
+}
+
+.skillIcon img{
+  height: 100%;
+  width: 100%;
+}
+
+img.need-contrast{
+  filter: drop-shadow(0 0 5px var(--icon-shadow));
+}
+
+
+/* #################### Responsive #################### */
+@media screen and (max-width: 768px){
+  .profileImage{
+    opacity: 0;
+    width: 0px;
+  }
+  .jobCard{
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .sectionTitle{
+    letter-spacing: .3rem;
+  }
+  .projectCard{
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .projectCard{
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .projectCard .projectImageWrapper{
+    display: none;
+  }
+  .projectCard .projectName{
+    align-self: center;
+  }
+  .skillCard{
+    width: 100%;
+  }
+}
+
+/* #################### Theme #################### */
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: #191610;
+    --text-alt: #8b8a87;
+    --background: #fbfaf9;
+    --bg-cards: #f2f1ef;
+    --alt-bg-cards: #e6ecec;
+    --primary: #504a34;
+    --secondary: #93b0b8;
+    --accent: #655f91;
+    --primary-btn-txt-hover: var(--background);
+    --project-color-0: #e6ecec9e;
+    --project-color-100: #bde0e9ba;
+    --project-text-detail: #655f91;
+    --icon-shadow: #19161066;
+    --constras-skill: #191610;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #eeebe5;
+    --text-alt: #697d79;
+    --background: #070604;
+    --bg-cards: #100f0d;
+    --alt-bg-cards: #131919;
+    --primary: #cbc5af;
+    --secondary: #46636c;
+    --accent: #746ea1;
+    --primary-btn-txt-hover: var(--text);
+    --project-color-0: #07060499;
+    --project-color-100: #131919cf;
+    --project-text-detail: #746ea1;
+    --icon-shadow: #eeebe566;
+    --constras-skill: #eeebe5;
+  }
+}
+
+/* #################### Titles #################### */
+.sectionTitle{
+  font-size: 1.4rem;
+  width: 100%;
   text-align: center;
+  -webkit-text-stroke: var(--primary) 1px;
+  color: transparent;
+  letter-spacing: .5rem;
+  margin-top: 2rem;
 }
 
-.project_link {
-  color: var(--txt-light-primary);
+/* #################### Buttons #################### */
+.primaryButton{
+  padding: .5rem 2rem;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: var(--background);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: background-color ease .3s,
+              color ease .3s;
+  outline: none;
+  border: none;
+}
+
+.primaryButton:hover{
+  background-color: var(--accent);
+  color: var(--primary-btn-txt-hover);
   cursor: pointer;
-  text-align: center;
 }
 
-.project_link:hover {
-  text-decoration: underline;
+.secundaryButton{
+  padding: .5rem 2rem;
+  border-radius: 8px;
+  background-color: transparent;
+  border: solid 2px var(--secondary);
+  color: var(--border-color);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: border-color ease .3s;
+  outline: none;
 }
 
-/* ############################## Madiaquery 800px ############################## */
-@media (max-width: 800px) {
-  html {
-    overflow-y: auto;
-    scroll-behavior: smooth;
-  }
-
-  #mainWrapper {
-    height: auto;
-  }
-
-  #topSection,
-  #midSection {
-    flex-direction: column;
-    flex-basis: auto;
-  }
-
-  #bottomSection {
-    max-width: 100%;
-    overflow: hidden;
-  }
-
-  article {
-    min-height: 295px;
-  }
-
-  #dev_area {
-    height: 295px;
-    width: 295px;
-    margin: auto;
-  }
-
-  #expositorWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .8rem;
-    height: calc(295px - 1.5rem - 16px);
-    justify-content: center;
-  }
-
-  #projectsWrapper {
-    height: calc(295px - 1.5rem - 16px);
-  }
+.secundaryButton:hover{
+  border: solid 2px var(--accent);
+  cursor: pointer;
 }
 
-/* ############################## scrollbar ############################## */
-/* Estilo del scrollbar para WebKit (Chrome, Safari) */
+/* #################### Scrollbar #################### */
 ::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--bg-cards);
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--bg-color);
+  background: transparent;
 }
 
-/* Estilo del scrollbar para Internet Explorer y Edge */
-*::-ms-scrollbar {
-  width: 6px;
+::-webkit-scrollbar-thumb {
+  background: var(--alt-bg-cards);
+  border-radius: 4px;
 }
 
-*::-ms-scrollbar-thumb {
-  background-color: var(--bg-cards);
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
 }
 
-*::-ms-scrollbar-track {
-  background-color: var(--bg-color);
+/* Scroll mozilla */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--alt-bg-cards) transparent;
 }
