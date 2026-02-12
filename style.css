@@ -1,14 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-
+  
 :root {
   --page-width: 1200px;
   --page-padding: 1rem;
 
-  --social-icon-size: 32px;
+  --social-icon-size: 40px;
+
+  --text: #eeebe5;
+  --text-argb: (24, 23, 23)7d79;
+  --background: #040403;
+  --bg-cards: #000;
+  --alt-bg-cards: #131919;
+  --primary: #cbc5af;
+  --secondary: #46636c;
+  --accent: #ffdd55;
+  --primary-btn-txt-hover: var(--text);
+  --project-color-0: #07060499;
+  --project-color-100: #131919cf;
+  --project-text-detail: #746ea1;
+  --icon-shadow: #eeebe566;
+  --constras-skill: #eeebe5;
 
   --jphonix-color: #fb652c;
-  --farmaenvios-color: #1747bf;
-  --dclariss-color: #f6a189;
+  --farmaenvios-color: #0846f1;
+  --massalud-color: #6a57ff;
+  --reclutalia-color: #ffbc00;
   --github-color: #fefefe;
   --linkedin-color: #0a66c2;
   --hackerranck-color: #32c766;
@@ -20,7 +36,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Inter", sans-serif;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -30,7 +46,7 @@
 body {
   background-color: var(--background);
   color: var(--text);
-  font-size: 1rem;
+  font-size: .8rem;
   overflow-x: hidden;
 }
 
@@ -47,12 +63,23 @@ body {
 /* #################### Page Content #################### */
 section.resumeCard{
   padding: 1rem;
-  border-radius: 16px;
   background-color: var(--bg-cards);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-image: url(/public/media/textures/noise1.png);
   transition: all 0.3s;
   display: flex;
   gap: clamp(1rem, 5%, 3rem);
+  position: relative;
+  width: 100%;
+}
+
+section.resumeCard::before{
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background-color: white;
+  background-image: url(/public/media/textures/noise.png);
+  z-index: -1;
+  opacity: .6;
 }
 
 .resumeCard.alt{
@@ -61,45 +88,148 @@ section.resumeCard{
 
 /* #################### Main Info #################### */
 #presentation{
-  height: 300px;
-}
-
-.devInfo{
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   gap: 1rem;
-  flex: 1;
-  overflow-y: scroll;
   position: relative;
 }
 
-.profileName{  
-  font-size: 2rem;
-  background: -webkit-linear-gradient(315deg, var(--primary), var(--accent));
-  background: linear-gradient(315deg, var(--primary), var(--accent));
-  background-clip: text;  
-  -webkit-background-clip: text;  
-  -webkit-text-fill-color: transparent;
+#presentation::after{
+  content: "";
+  position: absolute;
+  aspect-ratio: 1/1;
+  width: 200px;
+  background-image: url(/public/media/decoration/heroIllustration.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  right: 16px;
+  bottom: 32px;
+  opacity: .4;
+  pointer-events: none;
+}
+
+#devDataWrapper{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  gap: 1rem;
+  width: 100%;
+}
+
+.devDataCenter{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#profilePicture{
+  aspect-ratio: 1/1;
+  width: 64px;
+}
+
+#profilePicture > img{
+  width: 100%;
+  height: 100%;
+}
+
+#devData > h1{
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+#devData > p{
+  color: var(--accent);
+}
+
+#devHeroWrapper{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+#devHeroBanner{
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  padding-bottom: 0;
+  min-width: 550px;
+}
+
+#devHeroBanner > span{
+  color: transparent;
+  display: block;
   width: fit-content;
-  background-color: var(--accent);
-  font-weight: 700;
+  padding-right: 16px;
+  margin: -16px 0;
+  line-height: 0.8;
+  text-transform: uppercase;
+
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 11rem;
+
+  transform: scaleX(1.5) skewX(-10deg);
+  transform-origin: left center;
+
+  letter-spacing: -0.5rem;
+
+  background-color: var(--text);
+  background-image: url("./public/media/textures/noise1.png");
+  background-position: left center;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 3px var(--bg-cards);
 }
 
-.profileTitle{
-  font-weight: 600;
-  color: var(--text-alt);
+#devHeroWrapper > #devHeroMessage{
+  position: relative;
+  align-self: center;
+  display: block;
+  width: fit-content;
+  min-height: 70px;
+  min-width: 250px;
+  max-width: 350px;
+  margin-right: 80px;
+
+  background-image: url("./public/media/decoration/speechBubble.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+
+  transform: translateY(-100px);
 }
 
-.profileDescription{
+#devHeroMessage > p{
+  margin: 0;
+  text-align: center;
+
+  font-family: "Bebas Neue", sans-serif;
+  text-transform: uppercase;
+  color: var(--background);
+  padding: 24px 28px;
   font-size: 1.2rem;
 }
 
-.profileImage{
-  transition: opacity ease .3s,
-              width ease .3s;
-  width: 205px;
-  background: linear-gradient(0deg, var(--bg-cards) 0%, transparent 40%), url('./public/media/me/juanki.gif') no-repeat center center / cover;
+#devHeroMessage > #messageAuthor{
+  aspect-ratio: 1/1;
+  border: solid 3px var(--text);
+  position: absolute;
+  right: -52px;
+  bottom: -32px;
+  width: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#devHeroMessage > #messageAuthor img{
+  width: 100%;
+  height: 100%;
 }
 
 /* ******************** Social Info ******************** */
@@ -108,7 +238,6 @@ section.resumeCard{
   gap: 1rem;
   flex-direction: row;
   justify-content: flex-end;
-  margin-top: auto;
 }
 
 .socialLink{
@@ -118,11 +247,9 @@ section.resumeCard{
   background-color: var(--primary);
 }
 
-#socialGithub.socialLink{  mask: url(./public/media/social/github.svg) center/contain no-repeat; }
+#socialGithub.socialLink{  mask: url(../public/media/social/line_github.svg) center/contain no-repeat; }
 
-#socialLinkedin.socialLink{  mask: url(./public/media/social/linkedin.svg) center/contain no-repeat; }
-
-#socialHackerRank.socialLink{  mask: url(./public/media/social/hackerrank.svg) center/contain no-repeat; }
+#socialLinkedin.socialLink{  mask: url(../public/media/social/line_linkedin.svg) center/contain no-repeat; }
 
 .socialLink:hover{
   background-color: var(--accent);
@@ -130,151 +257,152 @@ section.resumeCard{
 }
 
 /* #################### Experience Info #################### */
-.jobCard{
+#experience{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#experience > .experienceTitleWrapper{
+  align-items: center;
   display: flex;
   gap: 1rem;
-  width: calc(33.333% - (1rem * 2 / 3));
-  flex-direction: column;
-  justify-content: space-between;
+}
+
+.experienceTitleWrapper > .sectionTitle{
+  margin: 0;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+#experienceWrapper{
   align-items: center;
-  text-align: center;
-  background-color: var(--bg-cards);
-  color: var(--text);
-  font-size: 1rem;
-  min-height: 200px;
-  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#experienceItem {
+  aspect-ratio: 1;
   position: relative;
-}
-
-.jobHeader{
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+  background-image: url(/public/media/textures/noise1.png);
+  background-color: #00000093;
+  background-blend-mode: multiply;
+  width: 25vw;
+  max-width: 250px;
+  min-width: 200px;
 }
 
-.jobLogo{
-  transition: background-color ease .3s;
-  background-color: var(--primary);
-  height: 64px;
-  width: 64px;
+#experienceItem.farmaenvios,
+#experienceItem.farmaenvios::before {
+  --job-color: var(--farmaenvios-color);
+  --job-texture: url("./public/media/textures/t1.svg");
 }
 
-.jobCard:hover .jobLogo{
-  background-color: var(--job-hover-color);
+#experienceItem.agm,
+#experienceItem.agm::before {
+  --job-color: var(--jphonix-color);
+  --job-texture: url("./public/media/textures/t2.svg");
 }
 
-#xpJPhonix { --job-hover-color: var(--jphonix-color); }
-#xpFarmaEnvios { --job-hover-color: var(--farmaenvios-color); }
-#xpDClariss { --job-hover-color: var(--dclariss-color); }
-
-#xpJPhonix .jobLogo{ mask: url(./public/media/jobs/jphonix.svg) center/contain no-repeat; }
-#xpFarmaEnvios .jobLogo{ mask: url(./public/media/jobs/farmaenvios.svg) center/contain no-repeat; }
-#xpDClariss .jobLogo{
-  mask: url(./public/media/jobs/dclariss.svg) center/contain no-repeat;
-  width: 110px;
+#experienceItem.massalud,
+#experienceItem.massalud::before {
+  --job-color: var(--massalud-color);
+  --job-texture: url("./public/media/textures/t3.svg");
 }
 
-.jobTitle{
-  font-size: 1.2rem;
-  font-weight: 700;
+#experienceItem.reclutalia,
+#experienceItem.reclutalia::before {
+  --job-color: var(--reclutalia-color);
+  --job-texture: url("./public/media/textures/t4.svg");
 }
 
-.jobDate{
+#experienceItem::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--job-color);
+
+  -webkit-mask-image: var(--job-texture);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  
+  mask-image: var(--job-texture);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+#experienceItem > .experienceTitleWrapper{
+  padding: 16px;
+  width: 100%;
+  z-index: 10;
+}
+
+#experienceItem > .experienceTitleWrapper > h3{
+  color: transparent;
+  width: fit-content;
+  text-transform: uppercase;
+  
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+
+  background-color: var(--job-color);
+  background-image: url("./public/media/textures/noise4.png");
+  background-position: left center;
+  background-blend-mode: multiply;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--bg-cards);
+
+}
+
+#experienceItem > .experienceTitleWrapper > p{
   font-size: 1rem;
-  color: var(--text-alt);
 }
 
-.jobDesc{
-  display: flex;
-  flex-direction: column;
-  gap: clamp(2rem, 5%, 1rem);  
+#experienceItem > .experienceImage {
+  aspect-ratio: 1/1;
+  height: 100%;
+  z-index: 10;
+  transition: transform 0.35s cubic-bezier(.34,1.56,.64,1); 
+}
+
+#experienceItem:hover > .experienceImage {
+  transform: translateY(-32px) scale(1.1);
+}
+
+#experienceItem > .experienceImage > img{
+  height: 100%;
+  width: 100%;
 }
 
 /* #################### Projects #################### */
-.projectCard{
-  width: calc(33.333% - (1rem * 2 / 3));
-  color: var(--text);
-  font-size: 1rem;
-  border-radius: 8px;
-  transition: all 0.3s;
+#projects{
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.projectCard .projectImageWrapper{
-  transition: border ease .3s;
-  height: 200px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+#projects > .projectsTitleWrapper{
   align-items: center;
-  overflow: hidden;
-  border-radius: 8px;
-  position: relative;
-  border-width: 2px;
-  border-style: solid;
-  border-image: linear-gradient(315deg, transparent, transparent) 1;
-}
-
-.projectCard:hover .projectImageWrapper{
-  border-image: linear-gradient(315deg, var(--primary), var(--accent)) 1;
-}
-
-.projectCard .projectImageWrapper>img{
-  transition: rotate ease .3s,
-              scale ease .3s;
-  height: 100%;
-  aspect-ratio: 16/9;
-}
-
-.projectCard:hover .projectImageWrapper>img{
-  rotate: -2deg;
-  scale: 1.2;
-}
-
-.projectCard .projectInfoWrapper{
   display: flex;
-  flex-direction: column;
   gap: 1rem;
-
 }
 
-.projectCard .projectName{
+.projectsTitleWrapper > .sectionTitle{
+  margin: 0;
   width: fit-content;
-  color: var(--text);
-  font-size: 1.3rem;
-  font-weight: 600;
-  position: relative;
-  z-index: 1;
-}
-
-.projectCard .projectName::after{
-  transition: left ease .3s;
-  background-color: var(--project-text-detail);
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: calc(100% + 8px);
-  height: 50%;
-  opacity: .5;
-  z-index: -1;
-}
-
-.projectCard:hover .projectName::after{
-  left: 4px;
-}
-
-.projectCard .projectDescription{
-  height: 100px;
-  overflow-y: scroll;
-}
-
-.projectCard .projectInfoWrapper button{
-  align-self: center;
+  white-space: nowrap;
 }
 
 /* #################### Academic History #################### */
@@ -347,89 +475,76 @@ img.need-contrast{
 
 
 /* #################### Responsive #################### */
-@media screen and (max-width: 768px){
-  .profileImage{
-    opacity: 0;
-    width: 0px;
+@media screen and (max-width: 979px){
+  #devHeroBanner > span{
+    font-size: 12rem;
   }
-  .jobCard{
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
+
+  #devHeroWrapper{
+    flex-direction: column;
   }
-  .sectionTitle{
-    letter-spacing: .3rem;
-  }
-  .projectCard{
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  .projectCard{
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  .projectCard .projectInfoWrapper{
-    width: 80%px;
-  }
-  .projectCard .projectName{
-    align-self: center;
-  }
-  .skillCard{
-    width: 100%;
+
+  #devHeroWrapper > #devHeroMessage{
+    margin-bottom: 40px;
+    margin-right: 80px;
+    transform: translateY(0px);
+    z-index: 10;
   }
 }
 
-/* #################### Theme #################### */
-@media (prefers-color-scheme: light) {
-  :root {
-    --text: #191610;
-    --text-alt: #8b8a87;
-    --background: #fbfaf9;
-    --bg-cards: #f2f1ef;
-    --alt-bg-cards: #e6ecec;
-    --primary: #504a34;
-    --secondary: #93b0b8;
-    --accent: #655f91;
-    --primary-btn-txt-hover: var(--background);
-    --project-color-0: #e6ecec9e;
-    --project-color-100: #bde0e9ba;
-    --project-text-detail: #655f91;
-    --icon-shadow: #19161066;
-    --constras-skill: #191610;
+@media screen and (max-width: 767px){
+  :root{
+    --social-icon-size: 32px;
   }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #eeebe5;
-    --text-alt: #697d79;
-    --background: #070604;
-    --bg-cards: #100f0d;
-    --alt-bg-cards: #131919;
-    --primary: #cbc5af;
-    --secondary: #46636c;
-    --accent: #746ea1;
-    --primary-btn-txt-hover: var(--text);
-    --project-color-0: #07060499;
-    --project-color-100: #131919cf;
-    --project-text-detail: #746ea1;
-    --icon-shadow: #eeebe566;
-    --constras-skill: #eeebe5;
+  
+  #devData > h1{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+  }
+
+  #devData > p{
+    font-size: .8rem;
+  }
+
+  #devHeroBanner{
+    min-width: 450px;
+  }
+
+  #devHeroBanner > span{
+    font-size: 8rem;
+    line-height: .9;
+  }
+
+  #devHeroWrapper{
+    flex-direction: column;
+  }
+
+  #devHeroWrapper > #devHeroMessage{
+    margin-bottom: 40px;
+    margin-right: 80px;
+    transform: translateY(0px);
+    z-index: 10;
+  }
+
+  #presentation::after{
+    width: 100px;
   }
 }
 
 /* #################### Titles #################### */
 .sectionTitle{
-  font-size: 1.4rem;
+  font-size: 1rem;
   width: 100%;
   text-align: center;
-  -webkit-text-stroke: var(--primary) 1px;
-  color: transparent;
+  color: var(--primary);
   letter-spacing: .5rem;
   margin-top: 2rem;
 }
 
+.sectionTitle > h2{
+  font-family: "Bebas Neue", sans-serif;
+}
 /* #################### Buttons #################### */
 .primaryButton{
   padding: .5rem 2rem;
@@ -465,6 +580,15 @@ img.need-contrast{
 .secundaryButton:hover{
   border: solid 2px var(--accent);
   cursor: pointer;
+}
+
+/* #################### Divider #################### */
+.divider{
+  width: 100%;
+  height: 1px;
+  background-color: var(--text);
+  background-image: url(./public/media/textures/noise.png);
+  opacity: .4;
 }
 
 /* #################### Scrollbar #################### */

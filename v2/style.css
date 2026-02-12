@@ -1,0 +1,492 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+  --page-width: 1200px;
+  --page-padding: 1rem;
+
+  --social-icon-size: 32px;
+
+  --jphonix-color: #fb652c;
+  --farmaenvios-color: #1747bf;
+  --dclariss-color: #f6a189;
+  --github-color: #fefefe;
+  --linkedin-color: #0a66c2;
+  --hackerranck-color: #32c766;
+  --cecytem-color: #00866b;
+  --ucol-color: #837e2f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-size: 1rem;
+  overflow-x: hidden;
+}
+
+/* #################### Page Wrapper #################### */
+#mainWrapper{
+  max-width: var(--page-width);
+  margin: 1rem auto;
+  padding: var(--page-padding);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* #################### Page Content #################### */
+section.resumeCard{
+  padding: 1rem;
+  border-radius: 16px;
+  background-color: var(--bg-cards);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  display: flex;
+  gap: clamp(1rem, 5%, 3rem);
+}
+
+.resumeCard.alt{
+  background-color: var(--alt-bg-cards);
+}
+
+/* #################### Main Info #################### */
+#presentation{
+  height: 300px;
+}
+
+.devInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  flex: 1;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.profileName{  
+  font-size: 2rem;
+  background: -webkit-linear-gradient(315deg, var(--primary), var(--accent));
+  background: linear-gradient(315deg, var(--primary), var(--accent));
+  background-clip: text;  
+  -webkit-background-clip: text;  
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+  background-color: var(--accent);
+  font-weight: 700;
+}
+
+.profileTitle{
+  font-weight: 600;
+  color: var(--text-alt);
+}
+
+.profileDescription{
+  font-size: 1.2rem;
+}
+
+.profileImage{
+  transition: opacity ease .3s,
+              width ease .3s;
+  width: 205px;
+  background: linear-gradient(0deg, var(--bg-cards) 0%, transparent 40%), url('../public/media/me/juanki.gif') no-repeat center center / cover;
+}
+
+/* ******************** Social Info ******************** */
+.profileSocial{
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.socialLink{
+  transition: background-color ease .3s;
+  height: var(--social-icon-size);
+  width: var(--social-icon-size);
+  background-color: var(--primary);
+}
+
+#socialGithub.socialLink{  mask: url(../public/media/social/github.svg) center/contain no-repeat; }
+
+#socialLinkedin.socialLink{  mask: url(../public/media/social/linkedin.svg) center/contain no-repeat; }
+
+#socialHackerRank.socialLink{  mask: url(../public/media/social/hackerrank.svg) center/contain no-repeat; }
+
+.socialLink:hover{
+  background-color: var(--accent);
+  cursor: pointer;
+}
+
+/* #################### Experience Info #################### */
+.jobCard{
+  display: flex;
+  gap: 1rem;
+  width: calc(33.333% - (1rem * 2 / 3));
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-color: var(--bg-cards);
+  color: var(--text);
+  font-size: 1rem;
+  min-height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.jobHeader{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jobLogo{
+  transition: background-color ease .3s;
+  background-color: var(--primary);
+  height: 64px;
+  width: 64px;
+}
+
+.jobCard:hover .jobLogo{
+  background-color: var(--job-hover-color);
+}
+
+#xpJPhonix { --job-hover-color: var(--jphonix-color); }
+#xpFarmaEnvios { --job-hover-color: var(--farmaenvios-color); }
+#xpDClariss { --job-hover-color: var(--dclariss-color); }
+
+#xpJPhonix .jobLogo{ mask: url(../public/media/jobs/jphonix.svg) center/contain no-repeat; }
+#xpFarmaEnvios .jobLogo{ mask: url(../public/media/jobs/farmaenvios.svg) center/contain no-repeat; }
+#xpDClariss .jobLogo{
+  mask: url(../public/media/jobs/dclariss.svg) center/contain no-repeat;
+  width: 110px;
+}
+
+.jobTitle{
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.jobDate{
+  font-size: 1rem;
+  color: var(--text-alt);
+}
+
+.jobDesc{
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5%, 1rem);  
+}
+
+/* #################### Projects #################### */
+.projectCard{
+  width: calc(33.333% - (1rem * 2 / 3));
+  color: var(--text);
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projectCard .projectImageWrapper{
+  transition: border ease .3s;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(315deg, transparent, transparent) 1;
+}
+
+.projectCard:hover .projectImageWrapper{
+  border-image: linear-gradient(315deg, var(--primary), var(--accent)) 1;
+}
+
+.projectCard .projectImageWrapper>img{
+  transition: rotate ease .3s,
+              scale ease .3s;
+  height: 100%;
+  aspect-ratio: 16/9;
+}
+
+.projectCard:hover .projectImageWrapper>img{
+  rotate: -2deg;
+  scale: 1.2;
+}
+
+.projectCard .projectInfoWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+
+.projectCard .projectName{
+  width: fit-content;
+  color: var(--text);
+  font-size: 1.3rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.projectCard .projectName::after{
+  transition: left ease .3s;
+  background-color: var(--project-text-detail);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: calc(100% + 8px);
+  height: 50%;
+  opacity: .5;
+  z-index: -1;
+}
+
+.projectCard:hover .projectName::after{
+  left: 4px;
+}
+
+.projectCard .projectDescription{
+  height: 100px;
+  overflow-y: scroll;
+}
+
+.projectCard .projectInfoWrapper button{
+  align-self: center;
+}
+
+/* #################### Academic History #################### */
+.academicCard{
+  width: 100%;
+}
+
+/* #################### Skills #################### */
+.skillCard{
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+  width: calc(50% - (1rem * 2 / 3));
+}
+
+.skillTitle {
+  font-size: 2rem;
+  background: -webkit-linear-gradient(315deg, var(--primary), var(--accent));
+  background: linear-gradient(315deg, var(--primary), var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+  font-weight: 700;
+}
+
+.skillItemWrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+.skillItemWrapper .skillItem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: .5rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: transparent;
+  transition: background-color ease .3s,
+              color ease .3s;
+}
+
+.skillItemWrapper .skillItem:hover{
+  background-color: var(--icon-shadow);
+  color: var(--primary-btn-txt-hover);
+}
+
+.skillItemWrapper .skillIcon{
+  height: 80px;
+  width: 80px;
+
+}
+
+.skillIcon img{
+  height: 100%;
+  width: 100%;
+}
+
+img.need-contrast{
+  filter: drop-shadow(0 0 5px var(--icon-shadow));
+}
+
+
+/* #################### Responsive #################### */
+@media screen and (max-width: 768px){
+  .profileImage{
+    opacity: 0;
+    width: 0px;
+  }
+  .jobCard{
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .sectionTitle{
+    letter-spacing: .3rem;
+  }
+  .projectCard{
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .projectCard{
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .projectCard .projectInfoWrapper{
+    width: 80%px;
+  }
+  .projectCard .projectName{
+    align-self: center;
+  }
+  .skillCard{
+    width: 100%;
+  }
+}
+
+/* #################### Theme #################### */
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: #191610;
+    --text-alt: #8b8a87;
+    --background: #fbfaf9;
+    --bg-cards: #f2f1ef;
+    --alt-bg-cards: #e6ecec;
+    --primary: #504a34;
+    --secondary: #93b0b8;
+    --accent: #655f91;
+    --primary-btn-txt-hover: var(--background);
+    --project-color-0: #e6ecec9e;
+    --project-color-100: #bde0e9ba;
+    --project-text-detail: #655f91;
+    --icon-shadow: #19161066;
+    --constras-skill: #191610;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #eeebe5;
+    --text-alt: #697d79;
+    --background: #070604;
+    --bg-cards: #100f0d;
+    --alt-bg-cards: #131919;
+    --primary: #cbc5af;
+    --secondary: #46636c;
+    --accent: #746ea1;
+    --primary-btn-txt-hover: var(--text);
+    --project-color-0: #07060499;
+    --project-color-100: #131919cf;
+    --project-text-detail: #746ea1;
+    --icon-shadow: #eeebe566;
+    --constras-skill: #eeebe5;
+  }
+}
+
+/* #################### Titles #################### */
+.sectionTitle{
+  font-size: 1.4rem;
+  width: 100%;
+  text-align: center;
+  -webkit-text-stroke: var(--primary) 1px;
+  color: transparent;
+  letter-spacing: .5rem;
+  margin-top: 2rem;
+}
+
+/* #################### Buttons #################### */
+.primaryButton{
+  padding: .5rem 2rem;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: var(--background);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: background-color ease .3s,
+              color ease .3s;
+  outline: none;
+  border: none;
+}
+
+.primaryButton:hover{
+  background-color: var(--accent);
+  color: var(--primary-btn-txt-hover);
+  cursor: pointer;
+}
+
+.secundaryButton{
+  padding: .5rem 2rem;
+  border-radius: 8px;
+  background-color: transparent;
+  border: solid 2px var(--secondary);
+  color: var(--border-color);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: border-color ease .3s;
+  outline: none;
+}
+
+.secundaryButton:hover{
+  border: solid 2px var(--accent);
+  cursor: pointer;
+}
+
+/* #################### Scrollbar #################### */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--alt-bg-cards);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Scroll mozilla */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--alt-bg-cards) transparent;
+}
