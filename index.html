@@ -23,7 +23,8 @@
   <meta name="twitter:image" content="https://api.juankicr.dev/media/images/juanki.png">
 
   <title>JuankiCR | Portfolio</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/workexperience.css">
 </head>
 
 <body>
@@ -40,8 +41,8 @@
           </div>
         </div>
         <div class="profileSocial">
-          <div id="socialGithub" class="socialLink" onclick="goto('https://github.com/JuankiCR')"></div>
-          <div id="socialLinkedin" class="socialLink" onclick="goto('https://www.linkedin.com/in/juan-carlos-ceballos-264538224/')"></div>
+          <div id="socialGithub" class="socialLink" onclick="toggleExpanded('https://github.com/JuankiCR')"></div>
+          <div id="socialLinkedin" class="socialLink" onclick="toggleExpanded('https://www.linkedin.com/in/juan-carlos-ceballos-264538224/')"></div>
         </div>
       </div>
 
@@ -75,43 +76,59 @@
       </div>
 
       <div id="experienceWrapper">
-        <div id="experienceItem" class="farmaenvios">
+        <div id="farmaenvios" class="experienceItem" onclick="toggleExpanded('farmaenvios')">
           <div class="experienceTitleWrapper">
             <h3>FarmaEnvíos</h3>
             <p>Online pharmacy</p>
+            <div class="visitButton" onclick="goto('https://www.farmaenvios.com')">Visit -></div>
           </div>
           <div class="experienceImage">
             <img src="./public/media/jobs/farmaenvios_mock.png" alt="Mock farmaenvios">
           </div>
+          <div class="experienceDesc">
+            Inventory and reporting platform using PHP and PostgreSQL
+          </div>
         </div>
 
-        <div id="experienceItem" class="agm">
+        <div id="agm" class="experienceItem" onclick="toggleExpanded('agm')">
           <div class="experienceTitleWrapper">
             <h3>JPhonix</h3>
-            <p>Backoffice</p>
+            <p>Backoffice website</p>
+            <div class="visitButton" onclick="goto('https://www.agmjuridicosphonix.com')">Visit -></div>
           </div>
           <div class="experienceImage">
             <img src="./public/media/jobs/jphonix_mock.png" alt="Mock farmaenvios">
           </div>
+          <div class="experienceDesc">
+            Collection management platform using PHP and PostgreSQL
+          </div>
         </div>
 
-        <div id="experienceItem" class="massalud">
+        <div id="massalud" class="experienceItem" onclick="toggleExpanded('massalud')">
           <div class="experienceTitleWrapper">
             <h3>+Salud</h3>
             <p>Pharmacy webapp</p>
+            <div class="visitButton" onclick="goto('https://atencion.consultoriodigital.mx')">Visit -></div>
           </div>
           <div class="experienceImage">
             <img src="./public/media/jobs/massalud_mock.png" alt="Mock farmaenvios">
           </div>
+          <div class="experienceDesc">
+            Web application for selling and managing medical consultations using NextJS
+          </div>
         </div>
 
-        <div id="experienceItem" class="reclutalia">
+        <div id="reclutalia" class="experienceItem" onclick="toggleExpanded('reclutalia')">
           <div class="experienceTitleWrapper">
             <h3>Reclutalia</h3>
             <p>Recruitment website</p>
+            <div class="visitButton" onclick="goto('https://reclutalia.com')">Visit -></div>
           </div>
           <div class="experienceImage">
             <img src="./public/media/jobs/reclutalia_mock.png" alt="Mock farmaenvios">
+          </div>
+          <div class="experienceDesc">
+            Digital job portal where recruiters post vacancies and users search for opportunities
           </div>
         </div>
       </div>
