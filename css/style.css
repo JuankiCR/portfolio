@@ -7,7 +7,6 @@
   --social-icon-size: 40px;
 
   --text: #eeebe5;
-  --text-argb: (24, 23, 23)7d79;
   --background: #040403;
   --bg-cards: #000;
   --alt-bg-cards: #131919;
@@ -25,9 +24,11 @@
   --farmaenvios-color: #0846f1;
   --massalud-color: #6a57ff;
   --reclutalia-color: #ffbc00;
-  --github-color: #fefefe;
-  --linkedin-color: #0a66c2;
-  --hackerranck-color: #32c766;
+
+  --calendario-color: #198294;
+  --cobronet-color: #035b5e;
+  --waddle-color: #c4a408;
+
   --cecytem-color: #00866b;
   --ucol-color: #837e2f;
 }
@@ -218,6 +219,7 @@ section.resumeCard::before{
 
 #devHeroMessage > #messageAuthor{
   aspect-ratio: 1/1;
+  background-color: var(--text);
   border: solid 3px var(--text);
   position: absolute;
   right: -52px;
@@ -492,4 +494,5 @@ img.need-contrast{
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--alt-bg-cards) transparent;
+  border: 1px;
 }

@@ -1,0 +1,199 @@
+.projectItem {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.025);
+  display: flex;
+  position: relative;
+}
+
+#pCalendario {
+  --project-bg-image: url(/public/media/projects/m3.svg);
+  --project-mock-color: var(--calendario-color);
+}
+
+#pCobroNet {
+  --project-bg-image: url(/public/media/projects/m1.svg);
+  --project-mock-color: var(--cobronet-color);
+}
+
+#pWaddle {
+  --project-bg-image: url(/public/media/projects/m2.svg);
+  --project-mock-color: var(--waddle-color);
+}
+
+.projectItem::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--project-mock-color);
+
+  -webkit-mask-image: var(--project-bg-image);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: right;
+  -webkit-mask-size: cover;
+  
+  mask-image: var(--project-bg-image);
+  mask-repeat: no-repeat;
+  mask-position: right;
+  mask-size: cover;
+  z-index: 0;
+}
+
+.projectItem::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+
+  background-image:
+    linear-gradient(90deg, var(--project-mock-color) 0%, transparent 45%);
+
+  z-index: 0;
+}
+
+.projectItem:nth-child(odd)::before {
+  -webkit-mask-position: left;
+  mask-position: left;
+}
+
+.projectItem:nth-child(odd)::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+
+  background-image:
+    linear-gradient(90deg, transparent 55%, var(--project-mock-color) 100%);
+
+  z-index: 0;
+}
+
+.projectItem > * {
+  position: relative;
+  z-index: 1;
+}
+
+.projectItem .projectImage {
+  aspect-ratio: 1/1;
+  min-width: 50px;
+  max-width: 250px;
+  z-index: 100;
+}
+
+.projectItem .projectImage img{
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.projectContent {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+
+}
+
+.projectContent h3 {
+  color: transparent;
+  width: fit-content;
+  text-transform: uppercase;
+  
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.6rem;
+
+  background-image:
+    url(/public/media/textures/noise2.png),
+    linear-gradient(90deg, var(--project-mock-color) 0%, var(--primary) 100%);
+  background-position: left center;
+  background-blend-mode: multiply;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--bg-cards);
+  align-self: flex-end;
+}
+
+.projectItem:nth-child(even) .projectContent h3 {
+  align-self: flex-start;
+}
+
+.projectContent p {
+  font-size: 1.2rem;
+  text-align: initial;
+  text-shadow:
+    1px 0 0 #040403,
+    -1px 0 0 #040403,
+    0 1px 0 #040403,
+    0 -1px 0 #040403;
+  font-weight: 600;
+  padding: 8px;
+  max-width: 500px;
+}
+
+.projectItem:nth-child(odd) .projectContent p {
+  align-self: flex-end;
+}
+
+.projectImage {
+  flex: 1;
+  aspect-ratio: 1/1;
+  max-width: 300px;
+}
+
+.projectImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.projectItem:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.projectItem:nth-child(odd)::before {
+  -webkit-mask-position: left;
+  mask-position: left;
+}
+
+@media screen and (max-width: 979px){
+  
+}
+
+@media screen and (max-width: 767px){
+  .projectItem:nth-child(odd) .projectContent h3 {
+    align-self: flex-start;
+  }
+
+  .projectContent p {
+    font-size: 1rem;
+  }
+}
+
+/* Animación entrada desde lados */
+.projectItem{
+  opacity: 0;
+  transform: translateX(0);
+  transition: transform 700ms cubic-bezier(.2,.8,.2,1), opacity 700ms ease;
+  will-change: transform, opacity;
+}
+
+.projectItem:nth-child(odd){
+  transform: translateX(-60px);
+}
+
+.projectItem:nth-child(even){
+  transform: translateX(60px);
+}
+
+.projectItem.in-view{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .projectItem{
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

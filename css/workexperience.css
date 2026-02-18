@@ -145,16 +145,29 @@
   aspect-ratio: 1/1;
   height: 100%;
   z-index: 10;
-  transition: transform 0.35s cubic-bezier(.34,1.56,.64,1); 
+  transition: transform .35s cubic-bezier(.34,1.56,.64,1); 
 }
 
-.experienceItem:hover > .experienceImage {
-  transform: translateX(var(--job-mock-movx)) translateY(var(--job-mock-movy)) scale(1.1);
+/* --------- DESKTOP --------- */
+@media (hover: hover) and (pointer: fine) {
+  .experienceItem:hover > .experienceImage {
+    transform: translateX(var(--job-mock-movx)) translateY(var(--job-mock-movy)) scale(1.1);
+  }
+
+  .experienceItem:hover .experienceDesc {
+    opacity: 1;
+  }
 }
 
-.experienceItem > .experienceImage > img{
-  height: 100%;
-  width: 100%;
+/* --------- MÓVIL --------- */
+@media (hover: none), (pointer: coarse) {
+  .experienceItem.in-view > .experienceImage {
+    transform: translateX(var(--job-mock-movx)) translateY(var(--job-mock-movy)) scale(1.1);
+  }
+
+  .experienceItem.in-view .experienceDesc {
+    opacity: 1;
+  }
 }
 
 .experienceItem > .experienceDesc{
@@ -172,6 +185,147 @@
 
 .experienceItem:hover .experienceDesc{
   opacity: 1;
+}
+
+#rbduckBanner {
+  position: relative;
+  color: var(--background);
+  background-image: url(/public/media/textures/wall.png);
+  background-color: #fefefebd;
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#rbduckBanner > h3{
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.3rem;
+  margin-top: 24px;
+  text-align: center;
+}
+
+#rbduckBanner::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  background: url(/public/media/decoration/top.svg) no-repeat;
+  background-position: center;
+  background-size: calc(100% + 64px);
+  height: 16px;
+}
+
+#rbduckBanner::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: url(/public/media/decoration/bottom.svg) no-repeat;
+  background-size: calc(100% + 32px);
+  height: 16px;
+}
+
+#rbduckBanner > div{
+  align-items: center;
+  color: var(--background);
+  display: flex;
+  flex-direction: row;
+}
+
+#rbduckBanner .rbduckBannerLeftContent{
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  height: fit-content;
+}
+
+#rbduckBanner .rbduckBannerRightContent{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  height: fit-content;
+  gap: 0.5rem;
+}
+
+#rbduckBanner .rbduckBannerRightContent p{
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+#rbduckBanner .rbduckBannerRightContent button{
+  cursor: pointer;
+  margin-top: 1rem;
+  background-color: var(--background);
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 8px 16px;
+  transition: 
+    background-color ease .3s;
+  outline: none;
+  border: none;
+  width: 100%;
+
+  -webkit-mask-image: url(/public/media/decoration/top.svg)X;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  
+  mask-image: url(/public/media/decoration/top.svg);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+
+#rbduckBanner .rbduckBannerRightContent button:hover{
+  background-color: #3e9af0;
+}
+
+#rbduckBanner .rbduckImage{
+  aspect-ratio: 1/1;
+  position: relative;
+  height: 75%;
+}
+
+#rbduckBanner .rbduckImage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #000000;
+
+  -webkit-mask-image: url(/public/media/decoration/spray.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: cover;
+  
+  mask-image: url(/public/media/decoration/spray.svg);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: cover;
+}
+
+#rbduckBanner .rbduckImage img{
+  height: 100%;
+  width: 100%;
+  transform: scaleX(-1);
+}
+
+#rbduckBanner .rbduckTitle p{
+  font-family: "Sedgwick Ave Display", cursive;
+  font-size: 2rem;
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 979px){
@@ -198,4 +352,31 @@
     height: 250px;
   }
 
+  #rbduckBanner > div{
+    flex-direction: column;
+    height: auto;
+    gap: 0;
+  }
+
+  #rbduckBanner > h3{
+    font-size: 1.1rem;
+  }
+
+  #rbduckBanner .rbduckImage{
+    max-height: 250px;
+  }
+
+  #rbduckBanner .rbduckBannerLeftContent{
+    padding: 0;
+    justify-content: center;
+    height: fit-content;
+  }
+
+  #rbduckBanner .rbduckBannerRightContent p{
+    font-size: .9rem;
+  }
+
+  #rbduckBanner .rbduckBannerRightContent button{
+    margin-bottom: 1rem;
+  }
 }
