@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/workexperience.css">
   <link rel="stylesheet" href="./css/projects.css">
+  <link rel="stylesheet" href="./css/skills.css">
 </head>
 
 <body>
@@ -42,8 +43,8 @@
           </div>
         </div>
         <div class="profileSocial">
-          <div id="socialGithub" class="socialLink" onclick="toggleExpanded('https://github.com/JuankiCR')"></div>
-          <div id="socialLinkedin" class="socialLink" onclick="toggleExpanded('https://www.linkedin.com/in/juan-carlos-ceballos-264538224/')"></div>
+          <div id="socialGithub" class="socialLink" onclick="goto('https://github.com/JuankiCR')"></div>
+          <div id="socialLinkedin" class="socialLink" onclick="goto('https://www.linkedin.com/in/juan-carlos-ceballos-264538224/')"></div>
         </div>
       </div>
 
@@ -80,7 +81,7 @@
         <div id="farmaenvios" class="experienceItem" onclick="toggleExpanded('farmaenvios')">
           <div class="experienceTitleWrapper">
             <h3>FarmaEnvíos</h3>
-            <p>Online pharmacy</p>
+            <p>Backoffice website</p>
             <div class="visitButton" onclick="goto('https://www.farmaenvios.com')">Visit -></div>
           </div>
           <div class="experienceImage">
@@ -172,7 +173,11 @@
           <img src="./public/media/projects/calendario.png" alt="Mock calendario">
         </div>
         <div class="projectContent">
-          <h3>WCalendar</h3>
+          <h3
+            onclick="goto('https://calendario.rbduck.com')"
+          >
+            WCalendar
+          </h3>
           <p>Application created for a family member to generate quick notes with photos/videos to check their arrival/departure times at work.</p>
         </div>
       </div>
@@ -182,7 +187,11 @@
           <img src="./public/media/projects/waddle.png" alt="Mock waddle">
         </div>
         <div class="projectContent">
-          <h3>Waddle</h3>
+          <h3
+            onclick="goto('https://waddle.rbduck.com')"
+          >
+            Waddle
+          </h3>
           <p>Progressive web application under development to keep track of my expenses and shopping or task lists.</p>
         </div>
       </div>
@@ -192,7 +201,11 @@
           <img src="./public/media/projects/cobronet.png" alt="Mock cobronet">
         </div>
         <div class="projectContent">
-          <h3>CobroNet</h3>
+          <h3
+            onclick="goto('https://cobronet-dev.rbduck.com')"
+          >
+            CobroNet
+          </h3>
           <p>Web application under development with the aim of facilitating the work of call center employees.</p>
         </div>
       </div>
@@ -205,11 +218,89 @@
 
     </section> -->
 
-    
     <section id="skills" class="resumeCard skillCard">
-      <div class="sectionTitle"> <h2>Skills.</h2> </div>
-    
+      <div class="skillsTitleWrapper">
+        <div class="sectionTitle"><h2>Skills.</h2></div>
+        <div class="divider"></div>
+      </div>
+
+      <p class="skillsLead">
+        I build production-ready web apps end-to-end.
+        Clean UI, solid APIs, and deployments that don’t break at 2am.
+        Cloud when it fits, self-hosted when control matters — always with automation, observability, and scalable foundations.
+      </p>
+
+
+      <div class="skillsWrapper">
+
+        <!-- Core Stack -->
+        <div class="skillCategory">
+          <h3>Core Stack</h3>
+          <div class="skillGrid">
+
+            <div class="skillItem"><img src="/public/media/skills/nextjs.svg" alt="Next.js"><span>Next.js</span></div>
+            <div class="skillItem"><img src="/public/media/skills/react.svg" alt="React"><span>React</span></div>
+            <div class="skillItem"><img src="/public/media/skills/ts.svg" alt="TypeScript"><span>TypeScript</span></div>
+            <div class="skillItem"><img src="/public/media/skills/nodejs.svg" alt="Node.js"><span>Node.js</span></div>
+            <div class="skillItem"><img src="/public/media/skills/postgresql.svg" alt="PostgreSQL"><span>PostgreSQL</span></div>
+            <div class="skillItem"><img src="/public/media/skills/git.svg" alt="Git"><span>Git</span></div>
+
+          </div>
+        </div>
+
+        <!-- DevOps & Cloud -->
+        <div class="skillCategory">
+          <h3>DevOps & Cloud</h3>
+          <div class="skillGrid">
+
+            <div class="skillItem"><img src="/public/media/skills/aws2.svg" alt="AWS"><span>AWS</span></div>
+            <div class="skillItem"><img src="/public/media/skills/firebase.svg" alt="Firebase"><span>Firebase</span></div>
+            <div class="skillItem"><img src="/public/media/skills/gitthub.svg" alt="GitHub"><span>GitHub</span></div>
+            <div class="skillItem"><img src="/public/media/skills/userver.svg" alt="Ubuntu Serv"><span>Ubuntu Serv</span></div>
+            <div class="skillItem"><img src="/public/media/skills/docker.svg" alt="Docker"><span>Docker</span></div>
+            <div class="skillItem"><img src="/public/media/skills/cloudflare.svg" alt="Cloudflare"><span>Cloudflare</span></div>
+
+          </div>
+        </div>
+
+        <!-- Backend & Data -->
+        <div class="skillCategory">
+          <h3>Backend & Data</h3>
+          <div class="skillGrid">
+
+            <div class="skillItem"><img src="/public/media/skills/express.svg" alt="Express"><span>Express</span></div>
+            <div class="skillItem"><img src="/public/media/skills/mongodb.svg" alt="MongoDB"><span>MongoDB</span></div>
+            <div class="skillItem"><img src="/public/media/skills/nginx.svg" alt="Nginx"><span>Nginx</span></div>
+
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="skillCategory">
+          <h3>Languages</h3>
+          <div class="skillGrid">
+            <div class="skillItem"><img src="/public/media/skills/python.svg" alt="Python"><span>Python</span></div>
+            <div class="skillItem"><img src="/public/media/skills/java.svg" alt="Java"><span>Java</span></div>
+            <div class="skillItem"><img src="/public/media/skills/cpp.svg" alt="C++"><span>C++</span></div>
+            <div class="skillItem"><img src="/public/media/skills/csharp.svg" alt="C#"><span>C#</span></div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skillCategory">
+          <h3>Tools</h3>
+          <div class="skillGrid">
+            <div class="skillItem"><img src="/public/media/skills/postman.svg" alt="Postman"><span>Postman</span></div>
+            <div class="skillItem"><img src="/public/media/skills/vscode.svg" alt="VSCode"><span>VSCode</span></div>
+            <div class="skillItem"><img src="/public/media/skills/notion.svg" alt="Notion"><span>Notion</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="divider"></div>
     </section>
+
   </main>
   <script src="./script.js"></script>
 </body>

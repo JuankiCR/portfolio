@@ -1,3 +1,21 @@
+#projects{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#projects > .projectsTitleWrapper{
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.projectsTitleWrapper > .sectionTitle{
+  margin: 0;
+  width: fit-content;
+  white-space: nowrap;
+}
+
 .projectItem {
   align-items: center;
   background-color: rgba(255, 255, 255, 0.025);
@@ -93,7 +111,9 @@
 }
 
 .projectContent h3 {
+  align-self: flex-end;
   color: transparent;
+  cursor: pointer;
   width: fit-content;
   text-transform: uppercase;
   
@@ -110,8 +130,37 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px var(--bg-cards);
-  align-self: flex-end;
+  position: relative;
 }
+
+.projectContent h3::before {
+  content: '';
+  position: absolute;
+  aspect-ratio: 1/1;
+  width: 16px;
+
+  background-color: var(--text);
+
+  -webkit-mask-image: url(/public/media/icons/externalLink.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: right;
+  -webkit-mask-size: cover;
+  
+  mask-image: url(/public/media/icons/externalLink.svg);
+  mask-repeat: no-repeat;
+  mask-position: right;
+  mask-size: cover;
+
+  left: calc(100% + 8px);
+  top: 4px;
+  transition: background-color ease .3s;
+}
+
+.projectContent h3:hover::before {
+  background-color: var();
+}
+
+
 
 .projectItem:nth-child(even) .projectContent h3 {
   align-self: flex-start;
@@ -164,8 +213,12 @@
     align-self: flex-start;
   }
 
+  .projectContent h3 {
+    font-size: 2rem;
+  }
+
   .projectContent p {
-    font-size: 1rem;
+    font-size: .9rem;
   }
 }
 

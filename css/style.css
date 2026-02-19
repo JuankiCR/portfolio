@@ -104,7 +104,7 @@ section.resumeCard::before{
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  right: 16px;
+  right: 32px;
   bottom: 32px;
   opacity: .4;
   pointer-events: none;
@@ -258,96 +258,6 @@ section.resumeCard::before{
   cursor: pointer;
 }
 
-
-
-/* #################### Projects #################### */
-#projects{
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-#projects > .projectsTitleWrapper{
-  align-items: center;
-  display: flex;
-  gap: 1rem;
-}
-
-.projectsTitleWrapper > .sectionTitle{
-  margin: 0;
-  width: fit-content;
-  white-space: nowrap;
-}
-
-/* #################### Academic History #################### */
-.academicCard{
-  width: 100%;
-}
-
-/* #################### Skills #################### */
-.skillCard{
-  flex-direction: column;
-  align-items: center;
-  height: 400px;
-  width: calc(50% - (1rem * 2 / 3));
-}
-
-.skillTitle {
-  font-size: 2rem;
-  background: -webkit-linear-gradient(315deg, var(--primary), var(--accent));
-  background: linear-gradient(315deg, var(--primary), var(--accent));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  width: fit-content;
-  font-weight: 700;
-}
-
-.skillItemWrapper{
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  overflow-y: scroll;
-}
-
-.skillItemWrapper .skillItem{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  padding: .5rem 1rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 700;
-  background-color: transparent;
-  transition: background-color ease .3s,
-              color ease .3s;
-}
-
-.skillItemWrapper .skillItem:hover{
-  background-color: var(--icon-shadow);
-  color: var(--primary-btn-txt-hover);
-}
-
-.skillItemWrapper .skillIcon{
-  height: 80px;
-  width: 80px;
-
-}
-
-.skillIcon img{
-  height: 100%;
-  width: 100%;
-}
-
-img.need-contrast{
-  filter: drop-shadow(0 0 5px var(--icon-shadow));
-}
-
-
 /* #################### Responsive #################### */
 @media screen and (max-width: 979px){
   #devHeroBanner > span{
@@ -410,6 +320,7 @@ img.need-contrast{
 
   #presentation::after{
     width: 100px;
+    right: 16px;
   }
 }
 
@@ -425,42 +336,6 @@ img.need-contrast{
 
 .sectionTitle > h2{
   font-family: "Bebas Neue", sans-serif;
-}
-/* #################### Buttons #################### */
-.primaryButton{
-  padding: .5rem 2rem;
-  border-radius: 8px;
-  background-color: var(--primary);
-  color: var(--background);
-  font-size: 1rem;
-  font-weight: 700;
-  transition: background-color ease .3s,
-              color ease .3s;
-  outline: none;
-  border: none;
-}
-
-.primaryButton:hover{
-  background-color: var(--accent);
-  color: var(--primary-btn-txt-hover);
-  cursor: pointer;
-}
-
-.secundaryButton{
-  padding: .5rem 2rem;
-  border-radius: 8px;
-  background-color: transparent;
-  border: solid 2px var(--secondary);
-  color: var(--border-color);
-  font-size: 1rem;
-  font-weight: 700;
-  transition: border-color ease .3s;
-  outline: none;
-}
-
-.secundaryButton:hover{
-  border: solid 2px var(--accent);
-  cursor: pointer;
 }
 
 /* #################### Divider #################### */
