@@ -121,7 +121,7 @@
   font-size: 2.6rem;
 
   background-image:
-    url(/public/media/textures/noise2.png),
+    url(/public/media/textures/noise2.webp),
     linear-gradient(90deg, var(--project-mock-color) 0%, var(--primary) 100%);
   background-position: left center;
   background-blend-mode: multiply;

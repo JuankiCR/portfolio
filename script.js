@@ -1,10 +1,10 @@
 const goto = (url) => {
-  window.open(url, '_blank');
+  window.open(url, "_blank");
 };
 
 const toggleExpanded = (targetId) => {
   const targetElement = document.querySelector(`#${targetId}`);
-  
+
   if (!targetElement) {
     console.warn("Elemento no encontrado");
     return;
@@ -14,46 +14,36 @@ const toggleExpanded = (targetId) => {
 };
 
 (() => {
-  const items = document.querySelectorAll(".projectItem");
-  if (!items.length) return;
+  const projectItems = document.querySelectorAll(".projectItem");
+  const experienceItems = document.querySelectorAll(".experienceItem");
+
+  const hasProjects = projectItems.length > 0;
+  const hasExperience = experienceItems.length > 0;
+  if (!hasProjects && !hasExperience) return;
+
+  const isTouchLike = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+  const elementsToObserve = [
+    ...projectItems,
+    ...(isTouchLike ? experienceItems : []),
+  ];
+
+  if (!elementsToObserve.length) return;
 
   const observer = new IntersectionObserver(
     (entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-          obs.unobserve(entry.target);
-        }
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("in-view");
+        obs.unobserve(entry.target);
       });
     },
     {
       threshold: 0.2,
-      rootMargin: "0px 0px -10% 0px"
+      rootMargin: "0px 0px -10% 0px",
     }
   );
 
-  items.forEach(el => observer.observe(el));
-})();
-
-
-(() => {
-  const items = document.querySelectorAll(".experienceItem");
-  if (!items.length) return;
-
-  const isTouchLike = window.matchMedia("(hover: none), (pointer: coarse)").matches;
-  if (!isTouchLike) return;
-
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-          obs.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 1 }
-  );
-
-  items.forEach(el => observer.observe(el));
+  elementsToObserve.forEach((el) => observer.observe(el));
 })();

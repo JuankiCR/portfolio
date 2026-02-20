@@ -1,3 +1,92 @@
+#next{
+  --skill-color: #fefefe5b;
+}
+
+#react{
+  --skill-color: #61dafb5b;
+}
+
+#ts{
+  --skill-color: #3178c65b;
+}
+
+#node{
+  --skill-color: #8cc84b5b;
+}
+
+#psql{
+  --skill-color: #3367915b;
+}
+
+#git{
+  --skill-color: #ee513b5b;
+}
+
+#aws{
+  --skill-color: #ff99005b;
+}
+
+#firebase{
+  --skill-color: #ff91005b;
+}
+
+#github{
+  --skill-color: #fefefe5b;
+}
+
+#ubuntu{
+  --skill-color: #f474215b;
+}
+
+#docker{
+  --skill-color: #0091e25b;
+}
+
+#cloudflare{
+  --skill-color: #f380205b;
+}
+
+#express{
+  --skill-color: #fefefe5b;
+}
+
+#mongo{
+  --skill-color: #53ab4e5b;
+}
+
+#nginx{
+  --skill-color: #0096395b;
+}
+
+#python{
+  --skill-color: #fdd22e5b;
+}
+
+#java{
+  --skill-color: #e76f005b;
+}
+
+#cpp{
+  --skill-color: #5c8dbc5b;
+}
+
+#csharp{
+  --skill-color: #a179dc5b;
+}
+
+#postman{
+  --skill-color: #ff6c375b;
+}
+
+#vscode{
+  --skill-color: #007acc5b;
+}
+
+#notion{
+  --skill-color: #fefefe5b;
+}
+
+
 #skills > .skillsTitleWrapper{
   align-items: center;
   display: flex;
@@ -53,8 +142,8 @@
 }
 
 .skillItem {
-  background: #111;
-  border: 1px solid #222;
+  background: #222;
+  border: 1px solid #333;
   padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
@@ -68,7 +157,7 @@
 .skillItem img {
   width: 40px;
   height: 40px;
-  filter: grayscale(100%);
+  filter: grayscale(0%);
   transition: all .3s ease;
 }
 
@@ -82,9 +171,20 @@
 /* Hover */
 .skillItem:hover {
   transform: translateY(-6px);
-  border-color: var(--accent);
+  border-color: var(--skill-color);
+  background-color: var(--skill-color);
+
+  -webkit-mask-image: url(/public/media/decoration/bottom.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: cover;
+
+  mask-image: url(/public/media/decoration/bottom.svg);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: cover;
 }
 
 .skillItem:hover img {
-  filter: grayscale(0%);
+  filter: grayscale(100%);
 }

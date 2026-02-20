@@ -59,13 +59,14 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  overflow: hidden;
 }
 
 /* #################### Page Content #################### */
 section.resumeCard{
   padding: 1rem;
   background-color: var(--bg-cards);
-  background-image: url(/public/media/textures/noise1.png);
+  background-image: url(/public/media/textures/noise1.webp);
   transition: all 0.3s;
   display: flex;
   gap: clamp(1rem, 5%, 3rem);
@@ -78,7 +79,7 @@ section.resumeCard::before{
   position: absolute;
   inset: -1px;
   background-color: white;
-  background-image: url(/public/media/textures/noise.png);
+  background-image: url(/public/media/textures/noise.webp);
   z-index: -1;
   opacity: .6;
 }
@@ -179,7 +180,7 @@ section.resumeCard::before{
   letter-spacing: -0.5rem;
 
   background-color: var(--text);
-  background-image: url(/public/media/textures/noise1.png);
+  background-image: url(/public/media/textures/noise1.webp);
   background-position: left center;
 
   -webkit-background-clip: text;
@@ -198,7 +199,7 @@ section.resumeCard::before{
   max-width: 350px;
   margin-right: 80px;
 
-  background-image: url(/public/media/decoration/speechBubble.png);
+  background-image: url(/public/media/decoration/speechBubble.webp);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
@@ -343,7 +344,7 @@ section.resumeCard::before{
   width: 100%;
   height: 1px;
   background-color: var(--text);
-  background-image: url(/public/media/textures/noise.png);
+  background-image: url(/public/media/textures/noise.webp);
   opacity: .4;
 }
 
