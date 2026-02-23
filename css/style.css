@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sedgwick+Ave+Display&display=swap');
+
+:root {
+  --page-width: 1200px;
+  --page-padding: 1rem;
+
+  --social-icon-size: 40px;
+
+  --text: #eeebe5;
+  --background: #040403;
+  --bg-cards: #000;
+  --alt-bg-cards: #131919;
+  --primary: #cbc5af;
+  --secondary: #46636c;
+  --accent: #ffdd55;
+  --primary-btn-txt-hover: var(--text);
+  --project-color-0: #07060499;
+  --project-color-100: #131919cf;
+  --project-text-detail: #746ea1;
+  --icon-shadow: #eeebe566;
+  --constras-skill: #eeebe5;
+
+  --jphonix-color: #fb652c;
+  --farmaenvios-color: #0846f1;
+  --massalud-color: #6a57ff;
+  --reclutalia-color: #ffbc00;
+
+  --calendario-color: #198294;
+  --cobronet-color: #035b5e;
+  --waddle-color: #c4a408;
+
+  --cecytem-color: #00866b;
+  --ucol-color: #837e2f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-size: .8rem;
+  overflow-x: hidden;
+}
+
+/* #################### Page Wrapper #################### */
+#mainWrapper{
+  max-width: var(--page-width);
+  margin: 1rem auto;
+  padding: var(--page-padding);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+/* #################### Page Content #################### */
+section.resumeCard{
+  padding: 1rem;
+  background-color: var(--bg-cards);
+  background-image: url(/public/media/textures/noise1.webp);
+  transition: all 0.3s;
+  display: flex;
+  gap: clamp(1rem, 5%, 3rem);
+  position: relative;
+  width: 100%;
+}
+
+section.resumeCard::before{
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background-color: white;
+  background-image: url(/public/media/textures/noise.webp);
+  z-index: -1;
+  opacity: .6;
+}
+
+.resumeCard.alt{
+  background-color: var(--alt-bg-cards);
+}
+
+/* #################### Main Info #################### */
+#presentation{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+#presentation::after{
+  content: "";
+  position: absolute;
+  aspect-ratio: 1/1;
+  width: 200px;
+  background-image: url(/public/media/decoration/heroIllustration.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  right: 32px;
+  bottom: 32px;
+  opacity: .4;
+  pointer-events: none;
+}
+
+#devDataWrapper{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  gap: 1rem;
+  width: 100%;
+}
+
+.devDataCenter{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#profilePicture{
+  aspect-ratio: 1/1;
+  width: 64px;
+}
+
+#profilePicture > img{
+  width: 100%;
+  height: 100%;
+}
+
+#devData > h1{
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+#devData > p{
+  color: var(--accent);
+}
+
+#devHeroWrapper{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+#devHeroBanner{
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  padding-bottom: 0;
+  min-width: 550px;
+}
+
+#devHeroBanner > span{
+  color: transparent;
+  display: block;
+  width: fit-content;
+  padding-right: 16px;
+  margin: -16px 0;
+  line-height: 0.8;
+  text-transform: uppercase;
+
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 11rem;
+
+  transform: scaleX(1.5) skewX(-10deg);
+  transform-origin: left center;
+
+  letter-spacing: -0.5rem;
+
+  background-color: var(--text);
+  background-image: url(/public/media/textures/noise1.webp);
+  background-position: left center;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 3px var(--bg-cards);
+}
+
+#devHeroWrapper > #devHeroMessage{
+  position: relative;
+  align-self: center;
+  display: block;
+  width: fit-content;
+  min-height: 70px;
+  min-width: 250px;
+  max-width: 350px;
+  margin-right: 80px;
+
+  background-image: url(/public/media/decoration/speechBubble.webp);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+
+  transform: translateY(-100px);
+}
+
+#devHeroMessage > p{
+  margin: 0;
+  text-align: center;
+
+  font-family: "Bebas Neue", sans-serif;
+  text-transform: uppercase;
+  color: var(--background);
+  padding: 24px 28px;
+  font-size: 1.2rem;
+}
+
+#devHeroMessage > #messageAuthor{
+  aspect-ratio: 1/1;
+  background-color: var(--text);
+  border: solid 3px var(--text);
+  position: absolute;
+  right: -52px;
+  bottom: -32px;
+  width: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#devHeroMessage > #messageAuthor img{
+  width: 100%;
+  height: 100%;
+}
+
+/* ******************** Social Info ******************** */
+.profileSocial{
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.socialLink{
+  transition: background-color ease .3s;
+  height: var(--social-icon-size);
+  width: var(--social-icon-size);
+  background-color: var(--primary);
+}
+
+#socialGithub.socialLink{  mask: url(/public/media/social/line_github.svg) center/contain no-repeat; }
+
+#socialLinkedin.socialLink{  mask: url(/public/media/social/line_linkedin.svg) center/contain no-repeat; }
+
+.socialLink:hover{
+  background-color: var(--accent);
+  cursor: pointer;
+}
+
+/* #################### Responsive #################### */
+@media screen and (max-width: 979px){
+  #devHeroBanner > span{
+    font-size: 12rem;
+  }
+
+  #devHeroWrapper{
+    flex-direction: column;
+  }
+
+  #devHeroWrapper > #devHeroMessage{
+    margin-bottom: 40px;
+    margin-right: 80px;
+    transform: translateY(0px);
+    z-index: 10;
+  }
+}
+
+@media screen and (max-width: 767px){
+  :root{
+    --social-icon-size: 32px;
+  }
+
+  .profileSocial{
+    flex-direction: column;
+  }
+  
+  #devData > h1{
+    font-size: 1.3rem;
+  }
+
+  #devData > p{
+    font-size: .8rem;
+  }
+
+  #devHeroBanner{
+    min-width: 300px;
+  }
+
+  #devHeroBanner > span{
+    font-size: 5.6rem;
+    line-height: 1;
+    letter-spacing: -0.3rem;
+  }
+
+  #devHeroWrapper{
+    flex-direction: column;
+  }
+
+  #devHeroWrapper > #devHeroMessage{
+    margin-bottom: 40px;
+    margin-right: 80px;
+    transform: translateY(0px);
+    z-index: 10;
+  }
+
+  #devHeroMessage > p{
+    font-size: 1rem;
+  }
+
+  #presentation::after{
+    width: 100px;
+    right: 16px;
+  }
+}
+
+/* #################### Titles #################### */
+.sectionTitle{
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+  color: var(--primary);
+  letter-spacing: .5rem;
+  margin-top: 2rem;
+}
+
+.sectionTitle > h2{
+  font-family: "Bebas Neue", sans-serif;
+}
+
+/* #################### Divider #################### */
+.divider{
+  width: 100%;
+  height: 1px;
+  background-color: var(--text);
+  background-image: url(/public/media/textures/noise.webp);
+  opacity: .4;
+}
+
+/* #################### Scrollbar #################### */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--alt-bg-cards);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Scroll mozilla */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--alt-bg-cards) transparent;
+  border: 1px;
+}

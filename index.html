@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
   <meta property="og:title" content="JuankiCR | Portfolio">
   <meta property="og:description"
     content="With over two years of hands-on experience in dynamic work environments, I've been dedicated to the ongoing pursuit of excellence in crafting optimal web solutions.">
@@ -19,228 +23,284 @@
   <meta name="twitter:image" content="https://api.juankicr.dev/media/images/juanki.png">
 
   <title>JuankiCR | Portfolio</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/workexperience.css">
+  <link rel="stylesheet" href="./css/projects.css">
+  <link rel="stylesheet" href="./css/skills.css">
 </head>
 
 <body>
   <main id="mainWrapper">
     <section id="presentation" class="resumeCard">
-      <div class="profileImage"></div>
-      <div class="devInfo">
-        <div class="devTitle">
-          <h1 class="profileName">Juan Carlos Ceballos</h1>
-          <p class="profileTitle">Web Developer | JuankiCR</p>
-        </div>
-        <div class="devPresentation">
-          <p class="profileDescription">With over two years of hands-on experience in dynamic work environments, I've been dedicated to the ongoing pursuit of excellence in crafting optimal web solutions.</p>
+      <div id="devDataWrapper">
+        <div class="devDataCenter">
+          <div id="profilePicture">
+            <img src="./public/media/me/duck.svg" alt="Profile Picture">          
+          </div>
+          <div id="devData">
+            <h1>Juan Carlos Ceballos Ramírez</h1>
+            <p>Fullstack Engineer | Next.js, Node.js, AWS, CI/CD</p>
+          </div>
         </div>
         <div class="profileSocial">
           <div id="socialGithub" class="socialLink" onclick="goto('https://github.com/JuankiCR')"></div>
           <div id="socialLinkedin" class="socialLink" onclick="goto('https://www.linkedin.com/in/juan-carlos-ceballos-264538224/')"></div>
-          <div id="socialHackerRank" class="socialLink" onclick="goto('https://www.hackerrank.com/profile/JuankiCR')"></div>
         </div>
       </div>
+
+      <div class="divider"></div>
+
+      <div id="devHeroWrapper">
+        <div id="devHeroBanner">
+          <span>Build</span>
+          <span>Deploy</span>
+          <span>Scale</span>
+        </div>
+
+        <div id="devHeroMessage">
+          <p>
+            AI doesn’t replace engineering.
+            Foundations still matter.
+          </p>
+          <div id="messageAuthor" tooltip="JuankiCR">
+            <img src="https://avatars.githubusercontent.com/u/59723157?v=4" alt="Author Picture">          
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+    </section>
+
+    <section id="experience" class="resumeCard experienceCard">
+      <div class="experienceTitleWrapper">
+        <div class="sectionTitle"> <h2>Work Experience.</h2> </div>
+        <div class="divider"></div>
+      </div>
+
+      <div id="experienceWrapper">
+        <div id="farmaenvios" class="experienceItem" onclick="toggleExpanded('farmaenvios')">
+          <div class="experienceTitleWrapper">
+            <h3>FarmaEnvíos</h3>
+            <p>Backoffice website</p>
+            <div class="visitButton" onclick="goto('https://www.farmaenvios.com')">Visit -></div>
+          </div>
+          <div class="experienceImage">
+            <img src="./public/media/jobs/farmaenvios_mock.webp" alt="Mock farmaenvios">
+          </div>
+          <div class="experienceDesc">
+            Inventory and reporting platform using PHP and PostgreSQL
+          </div>
+        </div>
+
+        <div id="agm" class="experienceItem" onclick="toggleExpanded('agm')">
+          <div class="experienceTitleWrapper">
+            <h3>JPhonix</h3>
+            <p>Backoffice website</p>
+            <div class="visitButton" onclick="goto('https://www.agmjuridicosphonix.com')">Visit -></div>
+          </div>
+          <div class="experienceImage">
+            <img src="./public/media/jobs/jphonix_mock.webp" alt="Mock farmaenvios">
+          </div>
+          <div class="experienceDesc">
+            Collection management platform using PHP and PostgreSQL
+          </div>
+        </div>
+
+        <div id="massalud" class="experienceItem" onclick="toggleExpanded('massalud')">
+          <div class="experienceTitleWrapper">
+            <h3>+Salud</h3>
+            <p>Pharmacy webapp</p>
+            <div class="visitButton" onclick="goto('https://atencion.consultoriodigital.mx')">Visit -></div>
+          </div>
+          <div class="experienceImage">
+            <img src="./public/media/jobs/massalud_mock.webp" alt="Mock farmaenvios">
+          </div>
+          <div class="experienceDesc">
+            Web application for selling and managing medical consultations using NextJS
+          </div>
+        </div>
+
+        <div id="reclutalia" class="experienceItem" onclick="toggleExpanded('reclutalia')">
+          <div class="experienceTitleWrapper">
+            <h3>Reclutalia</h3>
+            <p>Recruitment website</p>
+            <div class="visitButton" onclick="goto('https://reclutalia.com')">Visit -></div>
+          </div>
+          <div class="experienceImage">
+            <img src="./public/media/jobs/reclutalia_mock.webp" alt="Mock farmaenvios">
+          </div>
+          <div class="experienceDesc">
+            Digital job portal where recruiters post vacancies and users search for opportunities
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+    </section>
+
+    <section id="rbduckBanner">
+      <h3>For personal and freelance projects, contact me at</h3>
+      <div>
+        <div class="rbduckBannerLeftContent">
+          <div class="rbduckImage">
+            <img src="./public/media/jobs/pet_rbduck.webp" alt="Pet rbduck">
+          </div>
+          <div class="rbduckTitle">
+            <p>Rubber Duck</p>
+            <p>Enterprises</p>
+          </div>
+        </div>
+        <div class="rbduckBannerRightContent">
+          <div>
+            <p>We transform ideas into real digital products.</p>
+            <p>Web, automation, and analysis with a strategic approach.</p>
+          </div>
+          <button onclick="goto('https://www.rbduck.com/contact')">
+            Tell us your idea
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="resumeCard projectsCard">
+      <div class="projectsTitleWrapper">
+        <div class="sectionTitle"> <h2>Projects.</h2> </div>
+        <div class="divider"></div>
+      </div>
+
+      <div id="pCalendario" class="projectItem">
+        <div class="projectImage">
+          <img src="./public/media/projects/calendario.webp" alt="Mock calendario">
+        </div>
+        <div class="projectContent">
+          <h3
+            onclick="goto('https://calendario.rbduck.com')"
+          >
+            WCalendar
+          </h3>
+          <p>Application created for a family member to generate quick notes with photos/videos to check their arrival/departure times at work.</p>
+        </div>
+      </div>
+
+      <div id="pWaddle" class="projectItem">
+        <div class="projectImage">
+          <img src="./public/media/projects/waddle.webp" alt="Mock waddle">
+        </div>
+        <div class="projectContent">
+          <h3
+            onclick="goto('https://waddle.rbduck.com')"
+          >
+            Waddle
+          </h3>
+          <p>Progressive web application under development to keep track of my expenses and shopping or task lists.</p>
+        </div>
+      </div>
+
+      <div id="pCobroNet" class="projectItem">
+        <div class="projectImage">
+          <img src="./public/media/projects/cobronet.webp" alt="Mock cobronet">
+        </div>
+        <div class="projectContent">
+          <h3
+            onclick="goto('https://cobronet-dev.rbduck.com')"
+          >
+            CobroNet
+          </h3>
+          <p>Web application under development with the aim of facilitating the work of call center employees.</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
     </section>
     
-    <div class="sectionTitle"> <h2>Work Experience.</h2> </div>
+    <!-- <section class="resumeCard academicCard">
+      <div class="sectionTitle"> <h2>Academic History.</h2> </div>
 
-    <section id="xpJPhonix" class="resumeCard jobCard">
-      <div class="jobHeader">
-        <div class="jobLogo"></div>
-        <h3 class="jobTitle">JPhonix</h3>
-        <p class="jobDate">Jr Developer <br> 2022 - Present</p>
-      </div>
-      <div class="jobDesc">
-        <div class="jobResponsibilities">
-          <p>Frontend development</p>
-          <p>Search algorithms</p>
-          <p>General support</p>
-        </div>
-        <button class="primaryButton" onclick="goto('https://www.agmjuridicosphonix.com/')">Go to site</button>
-      </div>
-    </section>
-
-    <section id="xpDClariss" class="resumeCard alt jobCard">
-      <div class="jobHeader">
-        <div class="jobLogo"></div>
-        <h3 class="jobTitle">D'Clariss</h3>
-        <p class="jobDate">Main Developer <br> In development</p>
-      </div>
-      <div class="jobDesc">
-        <div class="jobResponsibilities">
-          <p>Project management</p>
-          <p>Full-stack developer</p>
-          <p>Negotiation</p>
-        </div>
-        <button class="primaryButton" onclick="goto('https://dclariss.com/home')">Go to site</button>
-      </div>
-    </section>
-
-    <section id="xpFarmaEnvios" class="resumeCard jobCard">
-      <div class="jobHeader">
-        <div class="jobLogo"></div>
-        <h3 class="jobTitle">FarmaEnvios</h3>
-        <p class="jobDate">Jr Developer <br> 2020 - 2021</p>
-      </div>
-      <div class="jobDesc">
-        <div class="jobResponsibilities">
-          <p>Backend development</p>
-          <p>Reporting platform</p>
-          <p>SQL queries</p>
-        </div>
-        <button class="primaryButton" onclick="goto('https://farmaenvios.com/')">Go to site</button>
-      </div>
-    </section>
-
-    <div id="projectsTitle" class="sectionTitle"> <h2>Projects.</h2> </div>
-    
-    <!-- <div class="sectionTitle"> <h2>Academic History.</h2> </div>
-
-    <section id="academicCECyTEM" class="resumeCard academicCard"> CECyTEM | Programming technician </section>
-
-    <section id="academicESIME" class="resumeCard alt academicCard"> IPN - ESIME | Communications and Electronics Engineering </section>
-
-    <section id="academicFIME" class="resumeCard academicCard"> UCOL - FIME | Intelligent Computer Engineering </section> -->
-
-    <div class="sectionTitle"> <h2>Skills.</h2> </div>
+    </section> -->
 
     <section id="skills" class="resumeCard skillCard">
-      <h3 class="skillTitle">Frontend</h3>
-      <div class="skillItemWrapper">
-        <div class="skillItem">
-          <div class="skillIcon">
-            <img src="./public/media/skills/html.svg" alt="HTML5" loading="lazy">
-          </div>
-          <p>HTML</p>
-        </div>
-  
-        <div class="skillItem">
-          <div class="skillIcon">
-            <img src="./public/media/skills/css.svg" alt="CSS" loading="lazy">
-          </div>
-          <p>CSS</p>
-        </div>
-  
-        <div class="skillItem">
-          <div class="skillIcon">
-            <img src="./public/media/skills/js.svg" alt="JavaScript" loading="lazy">
-          </div>
-          <p>JavaScript</p>
-        </div>
+      <div class="skillsTitleWrapper">
+        <div class="sectionTitle"><h2>Skills.</h2></div>
+        <div class="divider"></div>
       </div>
+
+      <p class="skillsLead">
+        I build production-ready web apps end-to-end.
+        Clean UI, solid APIs, and deployments that don’t break at 2am.
+        Cloud when it fits, self-hosted when control matters — always with automation, observability, and scalable foundations.
+      </p>
+
+
+      <div class="skillsWrapper">
+
+        <!-- Core Stack -->
+        <div class="skillCategory">
+          <h3>Core Stack</h3>
+          <div class="skillGrid">
+
+            <div id="next" class="skillItem"><img src="/public/media/skills/nextjs.svg" alt="Next.js"><span>Next.js</span></div>
+            <div id="react" class="skillItem"><img src="/public/media/skills/react.svg" alt="React"><span>React</span></div>
+            <div id="ts" class="skillItem"><img src="/public/media/skills/ts.svg" alt="TypeScript"><span>TypeScript</span></div>
+            <div id="node" class="skillItem"><img src="/public/media/skills/nodejs.svg" alt="Node.js"><span>Node.js</span></div>
+            <div id="psql" class="skillItem"><img src="/public/media/skills/postgresql.svg" alt="PostgreSQL"><span>PostgreSQL</span></div>
+            <div id="git" class="skillItem"><img src="/public/media/skills/git.svg" alt="Git"><span>Git</span></div>
+
+          </div>
+        </div>
+
+        <!-- DevOps & Cloud -->
+        <div class="skillCategory">
+          <h3>DevOps & Cloud</h3>
+          <div class="skillGrid">
+
+            <div id="aws" class="skillItem"><img src="/public/media/skills/aws2.svg" alt="AWS"><span>AWS</span></div>
+            <div id="firebase" class="skillItem"><img src="/public/media/skills/firebase.svg" alt="Firebase"><span>Firebase</span></div>
+            <div id="github" class="skillItem"><img src="/public/media/skills/gitthub.svg" alt="GitHub"><span>GitHub</span></div>
+            <div id="ubuntu" class="skillItem"><img src="/public/media/skills/userver.svg" alt="Ubuntu Serv"><span>Ubuntu Serv</span></div>
+            <div id="docker" class="skillItem"><img src="/public/media/skills/docker.svg" alt="Docker"><span>Docker</span></div>
+            <div id="cloudflare" class="skillItem"><img src="/public/media/skills/cloudflare.svg" alt="Cloudflare"><span>Cloudflare</span></div>
+
+          </div>
+        </div>
+
+        <!-- Backend & Data -->
+        <div class="skillCategory">
+          <h3>Backend & Data</h3>
+          <div class="skillGrid">
+
+            <div id="express" class="skillItem"><img src="/public/media/skills/express.svg" alt="Express"><span>Express</span></div>
+            <div id="mongo" class="skillItem"><img src="/public/media/skills/mongodb.svg" alt="MongoDB"><span>MongoDB</span></div>
+            <div id="nginx" class="skillItem"><img src="/public/media/skills/nginx.svg" alt="Nginx"><span>Nginx</span></div>
+
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="skillCategory">
+          <h3>Languages</h3>
+          <div class="skillGrid">
+            <div id="python" class="skillItem"><img src="/public/media/skills/python.svg" alt="Python"><span>Python</span></div>
+            <div id="java" class="skillItem"><img src="/public/media/skills/java.svg" alt="Java"><span>Java</span></div>
+            <div id="cpp" class="skillItem"><img src="/public/media/skills/cpp.svg" alt="C++"><span>C++</span></div>
+            <div id="csharp" class="skillItem"><img src="/public/media/skills/csharp.svg" alt="C#"><span>C#</span></div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skillCategory">
+          <h3>Tools</h3>
+          <div class="skillGrid">
+            <div id="postman" class="skillItem"><img src="/public/media/skills/postman.svg" alt="Postman"><span>Postman</span></div>
+            <div id="vscode" class="skillItem"><img src="/public/media/skills/vscode.svg" alt="VSCode"><span>VSCode</span></div>
+            <div id="notion" class="skillItem"><img src="/public/media/skills/notion.svg" alt="Notion"><span>Notion</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="divider"></div>
     </section>
 
-    <section id="skills" class="resumeCard alt skillCard">
-      <h3 class="skillTitle">Backend</h3>
-      <div class="skillItemWrapper">
-        <div class="skillItem">
-          <div class="skillIcon">
-            <img src="./public/media/skills/nodejs.svg" alt="NodeJS" loading="lazy">
-          </div>
-          <p>NodeJS</p>
-        </div>
-  
-        <div class="skillItem">
-          <div class="skillIcon">
-            <img src="./public/media/skills/express.svg" alt="ExpressJS" loading="lazy">
-          </div>
-          <p>ExpressJS</p>
-        </div>
-  
-        <div class="skillItem">
-          <div class="skillIcon">
-            <img src="./public/media/skills/python.svg" alt="Python" loading="lazy">
-          </div>
-          <p>Python</p>
-        </div>
-  
-        <div class="skillItem">
-          <div class="skillIcon">
-            <img src="./public/media/skills/nginx.svg" alt="NGINX" loading="lazy">
-          </div>
-          <p>NGINX</p>
-        </div>
-  
-        <div class="skillItem">
-          <div class="skillIcon">
-            <img src="./public/media/skills/postgresql.svg" alt="Postgresql" loading="lazy">
-          </div>
-          <p>Postgresql</p>
-        </div>
-  
-        <div class="skillItem">
-          <div class="skillIcon">
-            <img src="./public/media/skills/mongodb.svg" alt="MongoDB" loading="lazy">
-          </div>
-          <p>MongoDB</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="resumeCard alt skillCard">
-      <h3 class="skillTitle">Tools</h3>
-      <div class="skillItemWrapper">
-        <div class="skillItem">
-          <div class="skillIcon">
-            <img src="./public/media/skills/git.svg" alt="Git" loading="lazy">
-          </div>
-          <p>Git</p>
-        </div>
-  
-        <div class="skillItem">
-          <div class="skillIcon">
-            <img src="./public/media/skills/postman.svg" alt="Postman" loading="lazy">
-          </div>
-          <p>Postman</p>
-        </div>
-  
-        <div class="skillItem">
-          <div class="skillIcon">
-            <img src="./public/media/skills/vscode.svg" alt="VSCode" loading="lazy">
-          </div>
-          <p>VSCode</p>
-        </div>
-  
-        <div class="skillItem">
-          <div class="skillIcon">
-            <img src="./public/media/skills/notion.svg" alt="Notion" loading="lazy">
-          </div>
-          <p>Notion</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="resumeCard skillCard">
-      <h3 class="skillTitle">Other languages</h3>
-      <div class="skillItemWrapper">
-        <div class="skillItem">
-          <div class="skillIcon">
-            <img src="./public/media/skills/java.svg" alt="Java" loading="lazy">
-          </div>
-          <p>Java</p>
-        </div>
-  
-        <div class="skillItem">
-          <div class="skillIcon">
-            <img src="./public/media/skills/cpp.svg" alt="C++" loading="lazy">
-          </div>
-          <p>C++</p>
-        </div>
-  
-        <div class="skillItem">
-          <div class="skillIcon">
-            <img src="./public/media/skills/csharp.svg" alt="C#" loading="lazy">
-          </div>
-          <p>C#</p>
-        </div>
-  
-        <div class="skillItem">
-          <div class="skillIcon">
-            <img src="./public/media/skills/kotlin.svg" alt="Kotlin" loading="lazy">
-          </div>
-          <p>Kotlin</p>
-        </div>
-      </div>
   </main>
   <script src="./script.js"></script>
 </body>

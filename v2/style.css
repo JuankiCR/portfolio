@@ -99,7 +99,7 @@ section.resumeCard{
   transition: opacity ease .3s,
               width ease .3s;
   width: 205px;
-  background: linear-gradient(0deg, var(--bg-cards) 0%, transparent 40%), url('./public/media/me/juanki.gif') no-repeat center center / cover;
+  background: linear-gradient(0deg, var(--bg-cards) 0%, transparent 40%), url('../public/media/me/juanki.gif') no-repeat center center / cover;
 }
 
 /* ******************** Social Info ******************** */
@@ -118,11 +118,11 @@ section.resumeCard{
   background-color: var(--primary);
 }
 
-#socialGithub.socialLink{  mask: url(./public/media/social/github.svg) center/contain no-repeat; }
+#socialGithub.socialLink{  mask: url(../public/media/social/github.svg) center/contain no-repeat; }
 
-#socialLinkedin.socialLink{  mask: url(./public/media/social/linkedin.svg) center/contain no-repeat; }
+#socialLinkedin.socialLink{  mask: url(../public/media/social/linkedin.svg) center/contain no-repeat; }
 
-#socialHackerRank.socialLink{  mask: url(./public/media/social/hackerrank.svg) center/contain no-repeat; }
+#socialHackerRank.socialLink{  mask: url(../public/media/social/hackerrank.svg) center/contain no-repeat; }
 
 .socialLink:hover{
   background-color: var(--accent);
@@ -167,10 +167,10 @@ section.resumeCard{
 #xpFarmaEnvios { --job-hover-color: var(--farmaenvios-color); }
 #xpDClariss { --job-hover-color: var(--dclariss-color); }
 
-#xpJPhonix .jobLogo{ mask: url(./public/media/jobs/jphonix.svg) center/contain no-repeat; }
-#xpFarmaEnvios .jobLogo{ mask: url(./public/media/jobs/farmaenvios.svg) center/contain no-repeat; }
+#xpJPhonix .jobLogo{ mask: url(../public/media/jobs/jphonix.svg) center/contain no-repeat; }
+#xpFarmaEnvios .jobLogo{ mask: url(../public/media/jobs/farmaenvios.svg) center/contain no-repeat; }
 #xpDClariss .jobLogo{
-  mask: url(./public/media/jobs/dclariss.svg) center/contain no-repeat;
+  mask: url(../public/media/jobs/dclariss.svg) center/contain no-repeat;
   width: 110px;
 }
 

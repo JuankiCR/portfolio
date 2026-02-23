@@ -1,31 +1,49 @@
 const goto = (url) => {
-  window.open(url, '_blank');
+  window.open(url, "_blank");
 };
 
-const getProjects = () => {
-  projectsTitle = document.getElementById('projectsTitle');
-  let projectCards = '';
+const toggleExpanded = (targetId) => {
+  const targetElement = document.querySelector(`#${targetId}`);
 
-  fetch('https://api.juankicr.dev/projects/list')
-  .then((response) => response.json())
-  .then((data) => {
-    data.forEach((project, count) => {
-      projectCards += `
-        <section id="_PID${project._id}" class="resumeCard ${count % 2 == 0 ? "alt" : ""} projectCard"> 
-          <div class="projectImageWrapper">
-            <img src="https://api.juankicr.dev/media/image/${project.picture}" alt="Screenshot for project: ${project.name}" loading="lazy">
-          </div>
-          <div class="projectInfoWrapper">
-            <div class="projectName">${project.name}</div>
-            <div class="projectDescription">${project.description}</div>
-            <button class="secundaryButton" onclick="goto('${project.link}')">See project</button>
-          </div>
-        </section> 
-      `;
-    });
+  if (!targetElement) {
+    console.warn("Elemento no encontrado");
+    return;
+  }
 
-    projectsTitle.insertAdjacentHTML('afterend', projectCards);
-  });
+  targetElement.classList.toggle("expanded");
 };
 
-getProjects();
+(() => {
+  const projectItems = document.querySelectorAll(".projectItem");
+  const experienceItems = document.querySelectorAll(".experienceItem");
+
+  const hasProjects = projectItems.length > 0;
+  const hasExperience = experienceItems.length > 0;
+  if (!hasProjects && !hasExperience) return;
+
+  const isTouchLike = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+  const elementsToObserve = [
+    ...projectItems,
+    ...(isTouchLike ? experienceItems : []),
+  ];
+
+  if (!elementsToObserve.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("in-view");
+        obs.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.2,
+      rootMargin: "0px 0px -10% 0px",
+    }
+  );
+
+  elementsToObserve.forEach((el) => observer.observe(el));
+})();
